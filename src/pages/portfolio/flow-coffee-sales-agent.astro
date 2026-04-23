@@ -1,0 +1,412 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Nav from '../../components/Nav.astro';
+---
+
+<Layout title="Sales Agent | Crator">
+
+	<div class="page-rails" aria-hidden="true"></div>
+
+	<Nav active="work" />
+
+	<section class="case-hero">
+		<div class="back-link">
+			<a href="/portfolio">← Back to portfolio</a>
+		</div>
+		<div class="case-meta">
+			<span class="case-tag">Client Work</span>
+			<span class="case-status">live</span>
+		</div>
+		<h1>Sales Agent</h1>
+		<p class="case-sub">All machines managed via telegram, Telegram fully conversational interface, Auto lead dedup & enrichment.</p>
+
+		<div class="case-client">
+			<img src="https://www.cratorlabs.ai/_next/image?url=%2Flogos%2Fflow-coffee.avif&w=128&q=75" alt="Flow Coffee" />
+			<span>Flow Coffee</span>
+		</div>
+	</section>
+
+	<section class="case-content">
+		<div class="case-section">
+			<h2>The Problem</h2>
+			<p>Their sales pipeline was managed manually. Lead information was scattered across chats and spreadsheets, duplicates went unnoticed, and there was no systematic way to evaluate new locations.</p>
+		</div>
+
+		<div class="case-section">
+			<h2>What We Built</h2>
+			<p>We built a Sales Agent accessible via Telegram that maintains their CRM, captures and structures lead information, flags duplicates, and recommends new locations based on proximity, competition density, and target customer profile.</p>
+		</div>
+
+		<div class="case-section">
+			<h2>Features</h2>
+			<ul>
+				<li>Sales lead database management via Telegram messaging</li>
+				<li>Automatic lead extraction, structuring, and duplicate flagging</li>
+				<li>Location prospecting based on area, competition, and customer profile</li>
+				<li>Structured shortlists with contextual information for visit planning</li>
+			</ul>
+		</div>
+
+		<div class="case-section">
+			<h2>Tech Stack</h2>
+			<div class="tech-tags">
+				<span>Python</span>
+				<span>OpenAI</span>
+				<span>Telegram Bot API</span>
+				<span>Google Sheets</span>
+			</div>
+		</div>
+	</section>
+
+	<section class="section section--dark" id="cta">
+		<div class="section-inner">
+			<p class="cta-eyebrow">Ready to make your business AI-native?</p>
+			<h2 class="cta-heading">Start with a <span class="gradient-text">30-minute</span> strategy call.</h2>
+			<p class="cta-sub">No pitch, no pressure.</p>
+			<a href="/contact-us" class="btn-primary-inv">Book a Call →</a>
+		</div>
+	</section>
+
+	<footer class="footer">
+		<div class="footer-inner">
+			<div class="footer-logo">
+				<svg width="18" height="18" viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="6" fill="#000"/><path d="M9 9h14v2H11v10h2V11h2v10h2V11h2v10h2V9H9v12H7v2h16v-2H9V9z" fill="#fff"/></svg>
+				<span>Crator</span>
+			</div>
+			<div class="footer-links">
+				<a href="#services">Services</a>
+				<a href="/portfolio">Work</a>
+				<a href="/blog">Blog</a>
+				<a href="/contact-us">Contact</a>
+			</div>
+			<p class="footer-copy">&copy; 2026 Crator Labs. Applied AI Company, Singapore.</p>
+		</div>
+	</footer>
+
+<style is:global>
+	:root {
+		--bg: #fff;
+		--surface: #f7f7f7;
+		--border: rgba(0,0,0,0.08);
+		--border-mid: rgba(0,0,0,0.14);
+		--text-1: #000;
+		--text-2: rgba(0,0,0,0.5);
+		--text-3: rgba(0,0,0,0.3);
+		--max-w: 1120px;
+	}
+
+	.page-rails {
+		position: fixed;
+		top: 0;
+		bottom: 0;
+		left: 50%;
+		transform: translateX(-50%);
+		width: min(var(--max-w), 100vw);
+		pointer-events: none;
+		z-index: 40;
+		border-left: 1px solid var(--border);
+		border-right: 1px solid var(--border);
+	}
+
+	.case-hero {
+		max-width: var(--max-w);
+		margin: 0 auto;
+		padding: 8rem 2rem 3rem;
+	}
+
+	.back-link {
+		margin-bottom: 2rem;
+	}
+
+	.back-link a {
+		font-size: 0.875rem;
+		color: var(--text-2);
+		text-decoration: none;
+		transition: color 0.2s;
+	}
+
+	.back-link a:hover { color: var(--text-1); }
+
+	.case-meta {
+		display: flex;
+		gap: 0.75rem;
+		margin-bottom: 1.5rem;
+	}
+
+	.case-tag {
+		font-size: 0.6875rem;
+		font-weight: 600;
+		color: var(--text-2);
+		background: var(--surface);
+		border: 1px solid var(--border);
+		padding: 0.25rem 0.625rem;
+		border-radius: 4px;
+		text-transform: uppercase;
+		letter-spacing: 0.05em;
+	}
+
+	.case-status {
+		font-size: 0.6875rem;
+		font-weight: 600;
+		color: #16a34a;
+		background: rgba(22,163,74,0.1);
+		border: 1px solid rgba(22,163,74,0.2);
+		padding: 0.25rem 0.625rem;
+		border-radius: 4px;
+		text-transform: uppercase;
+		letter-spacing: 0.05em;
+	}
+
+	.case-hero h1 {
+		font-family: 'IBM Plex Sans', sans-serif;
+		font-size: clamp(2.5rem, 6vw, 3.5rem);
+		font-weight: 300;
+		line-height: 1.1;
+		letter-spacing: -0.03em;
+		color: var(--text-1);
+		margin-bottom: 1rem;
+	}
+
+	.case-sub {
+		font-size: 1.25rem;
+		color: var(--text-2);
+		line-height: 1.6;
+		max-width: 600px;
+		margin-bottom: 2rem;
+	}
+
+	.case-client {
+		display: flex;
+		align-items: center;
+		gap: 0.75rem;
+	}
+
+	.case-client img {
+		width: 48px;
+		height: 48px;
+		border-radius: 8px;
+		object-fit: cover;
+	}
+
+	.case-client span {
+		font-size: 1.125rem;
+		font-weight: 500;
+		color: var(--text-1);
+	}
+
+	.case-content {
+		max-width: 800px;
+		margin: 0 auto;
+		padding: 0 2rem 6rem;
+	}
+
+	.case-section {
+		margin-bottom: 3rem;
+	}
+
+	.case-section h2 {
+		font-family: 'IBM Plex Sans', sans-serif;
+		font-size: 1.5rem;
+		font-weight: 600;
+		color: var(--text-1);
+		margin-bottom: 1rem;
+		letter-spacing: -0.01em;
+	}
+
+	.case-section p {
+		font-size: 1.0625rem;
+		color: var(--text-2);
+		line-height: 1.75;
+	}
+
+	.case-section ul {
+		list-style: none;
+		padding: 0;
+	}
+
+	.case-section li {
+		font-size: 1rem;
+		color: var(--text-2);
+		line-height: 1.75;
+		padding-left: 1.5rem;
+		position: relative;
+		margin-bottom: 0.5rem;
+	}
+
+	.case-section li::before {
+		content: '→';
+		position: absolute;
+		left: 0;
+		color: var(--text-3);
+	}
+
+	.tech-tags {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.5rem;
+	}
+
+	.tech-tags span {
+		font-size: 0.8125rem;
+		font-weight: 500;
+		color: var(--text-2);
+		background: var(--surface);
+		border: 1px solid var(--border);
+		padding: 0.375rem 0.875rem;
+		border-radius: 6px;
+	}
+
+	.section {
+		position: relative;
+		padding: 6rem 2rem;
+	}
+
+	.section--dark {
+		width: min(var(--max-w), 100vw);
+		margin: 0 auto;
+		position: relative;
+		background: #0d0d0d;
+	}
+
+	.section--dark .section-inner {
+		text-align: center;
+		padding: 6rem 2rem;
+		max-width: 1120px;
+		margin: 0 auto;
+	}
+
+	.cta-eyebrow {
+		font-size: 0.6875rem;
+		font-weight: 600;
+		color: rgba(255,255,255,0.3);
+		text-transform: uppercase;
+		letter-spacing: 0.1em;
+		margin-bottom: 1.25rem;
+	}
+
+	.cta-heading {
+		font-family: 'IBM Plex Sans', sans-serif;
+		font-size: clamp(2rem, 5vw, 3rem);
+		font-weight: 300;
+		letter-spacing: -0.03em;
+		color: #f5f5f5;
+		line-height: 1.1;
+		margin-bottom: 1.5rem;
+	}
+
+	.gradient-text {
+		font-weight: 400;
+		background: linear-gradient(90deg, #3b82f6, #b497cf, #5227ff, #3b82f6);
+		background-size: 300% 100%;
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+		background-clip: text;
+		animation: shimmer-text 8s linear infinite;
+	}
+
+	@keyframes shimmer-text {
+		0% { background-position: 0% 50%; }
+		100% { background-position: 300% 50%; }
+	}
+
+	.cta-sub {
+		font-size: 1rem;
+		color: rgba(255,255,255,0.45);
+		line-height: 1.7;
+		margin-bottom: 2.5rem;
+	}
+
+	.btn-primary-inv {
+		display: inline-flex;
+		align-items: center;
+		background: #fff;
+		color: #000;
+		text-decoration: none;
+		font-size: 0.9375rem;
+		font-weight: 600;
+		padding: 0.875rem 1.75rem;
+		border-radius: 8px;
+		border: 1px solid #fff;
+		transition: opacity 0.15s;
+	}
+
+	.btn-primary-inv:hover { opacity: 0.88; }
+
+	.footer {
+		position: relative;
+		padding: 1.75rem 2rem;
+	}
+
+	.footer::before {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 50%;
+		transform: translateX(-50%);
+		width: min(1120px, 100vw);
+		height: 1px;
+		background: var(--border);
+	}
+
+	.footer-inner {
+		max-width: 1120px;
+		margin: 0 auto;
+		display: flex;
+		align-items: center;
+		gap: 2rem;
+		flex-wrap: wrap;
+	}
+
+	.footer-logo {
+		display: flex;
+		align-items: center;
+		gap: 0.5rem;
+		font-size: 0.875rem;
+		font-weight: 600;
+		color: var(--text-1);
+	}
+
+	.footer-links {
+		display: flex;
+		gap: 1.5rem;
+		flex: 1;
+	}
+
+	.footer-links a {
+		font-size: 0.8125rem;
+		color: var(--text-2);
+		text-decoration: none;
+		transition: color 0.15s;
+	}
+
+	.footer-links a:hover { color: var(--text-1); }
+
+	.footer-copy {
+		font-size: 0.75rem;
+		color: var(--text-3);
+		margin-left: auto;
+	}
+
+	@media (max-width: 900px) {
+		.page-rails { display: none; }
+
+		.case-hero { padding: 6rem 1rem 2rem; }
+		.case-hero h1 { font-size: clamp(2rem, 6vw, 2.5rem); }
+		.case-sub { font-size: 1rem; }
+		.case-content { padding: 0 1rem 3rem; }
+		.case-section h2 { font-size: 1.25rem; }
+
+		.section--dark .section-inner { text-align: left; padding: 3rem 1rem; }
+		.cta-eyebrow { text-align: left; }
+		.cta-heading { font-size: clamp(1.5rem, 6vw, 2rem); text-align: left; }
+		.cta-sub { text-align: left; margin: 0 0 1.5rem; }
+		.btn-primary-inv { width: 100%; }
+
+		.footer { padding: 1.5rem 1rem; }
+		.footer-inner { flex-direction: column; align-items: flex-start; gap: 1.25rem; }
+		.footer-links { flex-direction: column; gap: 0.75rem; }
+		.footer-copy { margin-left: 0; }
+	}
+</style>
+
+</Layout>

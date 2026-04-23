@@ -1,0 +1,359 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Nav from '../components/Nav.astro';
+---
+
+<Layout title="Blog | Crator Labs" description="Insights on automation, AI agents, and building AI-native businesses.">
+
+	<div class="page-rails" aria-hidden="true"></div>
+
+	<Nav active="blog" />
+
+	<main class="blog-main">
+
+		<!-- Page header -->
+		<header class="blog-header">
+			<p class="blog-eyebrow">The Crator Blog</p>
+			<h1>Insights on AI,<br>automation &amp; building.</h1>
+			<p class="blog-tagline">Practical writing for founders and operators who want to move faster with AI.</p>
+		</header>
+
+		<!-- Featured / Top story -->
+		<section class="top-stories">
+			<p class="section-label">Top story</p>
+			<a href="/blog/soc-2-compliance" class="featured-card">
+				<div class="featured-thumb"></div>
+				<div class="featured-body">
+					<div class="featured-meta">
+						<span class="post-tag">Security</span>
+						<span class="post-date">April 11, 2026</span>
+					</div>
+					<h2 class="featured-title">SOC 2 Compliance: Our Journey Towards Strengthening Trust and Security</h2>
+					<p class="featured-excerpt">Context AI Technologies has successfully completed its SOC 2 Type 2 audit for Crator AI. Learn about our journey, the lessons we learned, and our commitment to protecting customer data.</p>
+					<span class="read-more">Read article →</span>
+				</div>
+			</a>
+		</section>
+
+		<!-- Recent articles — 3 col -->
+		<section class="recent-section">
+			<p class="section-label">Recent articles</p>
+			<div class="articles-grid">
+
+				<a href="/blog/what-is-an-ai-chief-of-staff" class="article-card">
+					<div class="article-thumb"></div>
+					<div class="article-body">
+						<div class="article-meta">
+							<span class="post-tag">Strategy</span>
+							<span class="post-date">Mar 7, 2026</span>
+						</div>
+						<h3 class="article-title">What Is an AI Chief of Staff? (And Why Startups Need One First)</h3>
+						<p class="article-excerpt">An AI Chief of Staff runs your ops, delegates to agents, and keeps everything moving.</p>
+					</div>
+					<div class="article-footer">
+						<span class="article-arrow">→</span>
+					</div>
+				</a>
+
+				<a href="/blog/picrust" class="article-card">
+					<div class="article-thumb"></div>
+					<div class="article-body">
+						<div class="article-meta">
+							<span class="post-tag">Engineering</span>
+							<span class="post-date">Feb 15, 2026</span>
+						</div>
+						<h3 class="article-title">PiCrust: What If Pi Was Written in Rust?</h3>
+						<p class="article-excerpt">Pi proved the best agent architecture is a while loop with tools. PiCrust rebuilds it in Rust.</p>
+					</div>
+					<div class="article-footer">
+						<span class="article-arrow">→</span>
+					</div>
+				</a>
+
+				<!-- Placeholder card 3 — replace when new article ships -->
+				<a href="/blog" class="article-card article-card--muted">
+					<div class="article-thumb"></div>
+					<div class="article-body">
+						<div class="article-meta">
+							<span class="post-tag">Coming soon</span>
+							<span class="post-date">2026</span>
+						</div>
+						<h3 class="article-title">How We Cut a Client's Manual Work by 84% in 3 Weeks</h3>
+						<p class="article-excerpt">A breakdown of the audit → build → run process for a $10M+ operations business.</p>
+					</div>
+					<div class="article-footer">
+						<span class="article-arrow">→</span>
+					</div>
+				</a>
+
+			</div>
+		</section>
+
+	</main>
+
+	<!-- Footer -->
+	<footer class="blog-footer">
+		<div class="footer-inner">
+			<a href="/" class="footer-logo">
+				<img src="https://www.cratorlabs.ai/_next/image?url=%2Ffull-logo.png&w=256&q=75" alt="Crator" height="22" />
+			</a>
+			<div class="footer-policies">
+				<a href="/privacy">Privacy</a>
+				<span class="footer-sep">·</span>
+				<a href="/terms-of-service">Terms</a>
+				<span class="footer-sep">·</span>
+				<a href="https://trust.cratorlabs.ai" target="_blank" rel="noopener">Security</a>
+			</div>
+			<p class="footer-copy">&copy; 2026 Crator Labs. Applied AI Company, Singapore.</p>
+		</div>
+	</footer>
+
+</Layout>
+
+<style>
+	:root {
+		--bg: #fff;
+		--surface: #f7f7f7;
+		--border: rgba(0,0,0,0.08);
+		--border-mid: rgba(0,0,0,0.14);
+		--text-1: #000;
+		--text-2: rgba(0,0,0,0.5);
+		--text-3: rgba(0,0,0,0.3);
+		--accent: #2563eb;
+		--max-w: 1120px;
+	}
+
+	/* ─── Rails ─────────────────────────────────────────────── */
+	.page-rails {
+		position: fixed;
+		top: 0; bottom: 0;
+		left: 50%; transform: translateX(-50%);
+		width: min(var(--max-w), 100vw);
+		pointer-events: none;
+		z-index: 40;
+		border-left: 1px solid var(--border);
+		border-right: 1px solid var(--border);
+	}
+
+	/* Nav → src/components/Nav.astro */
+
+	/* ─── Main ───────────────────────────────────────────────── */
+	.blog-main {
+		max-width: var(--max-w);
+		margin: 0 auto;
+		padding: 8rem 2rem 6rem;
+	}
+
+	/* ─── Header ─────────────────────────────────────────────── */
+	.blog-header {
+		padding-bottom: 4rem;
+		border-bottom: 1px solid var(--border);
+		margin-bottom: 4rem;
+	}
+	.blog-eyebrow {
+		font-size: 0.6875rem;
+		font-weight: 700;
+		text-transform: uppercase;
+		letter-spacing: 0.1em;
+		color: var(--text-3);
+		margin-bottom: 1.25rem;
+	}
+	.blog-header h1 {
+		font-size: clamp(2.5rem, 5.5vw, 4rem);
+		font-weight: 300;
+		letter-spacing: -0.035em;
+		line-height: 1.08;
+		color: var(--text-1);
+		margin-bottom: 1.25rem;
+	}
+	.blog-tagline {
+		font-size: 1.0625rem;
+		color: var(--text-2);
+		line-height: 1.65;
+		max-width: 480px;
+	}
+
+	/* ─── Section label ──────────────────────────────────────── */
+	.section-label {
+		font-size: 0.625rem;
+		font-weight: 700;
+		text-transform: uppercase;
+		letter-spacing: 0.1em;
+		color: var(--text-3);
+		margin-bottom: 1.25rem;
+	}
+
+	/* ─── Tags & meta ────────────────────────────────────────── */
+	.post-tag {
+		font-size: 0.5625rem;
+		font-weight: 700;
+		text-transform: uppercase;
+		letter-spacing: 0.07em;
+		color: var(--text-3);
+		background: rgba(0,0,0,0.04);
+		border: 1px solid var(--border);
+		padding: 0.1875rem 0.5rem;
+		border-radius: 3px;
+	}
+	.post-date {
+		font-size: 0.6875rem;
+		color: var(--text-3);
+		font-weight: 500;
+	}
+
+	/* ─── Featured card ──────────────────────────────────────── */
+	.top-stories { margin-bottom: 4rem; }
+	.featured-card {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 0;
+		text-decoration: none;
+		color: inherit;
+		border: 1px solid var(--border);
+		border-radius: 8px;
+		overflow: hidden;
+		transition: box-shadow 0.2s;
+	}
+	.featured-card:hover {}
+	.featured-thumb {
+		background: var(--surface);
+		min-height: 280px;
+	}
+	.featured-body {
+		padding: 2.5rem;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		gap: 1rem;
+	}
+	.featured-meta {
+		display: flex;
+		align-items: center;
+		gap: 0.625rem;
+	}
+	.featured-title {
+		font-size: clamp(1.25rem, 2.5vw, 1.625rem);
+		font-weight: 400;
+		line-height: 1.25;
+		letter-spacing: -0.025em;
+		color: var(--text-1);
+	}
+	.featured-excerpt {
+		font-size: 0.9375rem;
+		color: var(--text-2);
+		line-height: 1.7;
+	}
+	.read-more {
+		font-size: 0.875rem;
+		font-weight: 600;
+		color: var(--text-1);
+		text-decoration: none;
+		margin-top: 0.5rem;
+	}
+
+	/* ─── Articles grid — 3 col ──────────────────────────────── */
+	.recent-section { margin-bottom: 4rem; }
+	.articles-grid {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		gap: 1.25rem;
+	}
+	.article-card {
+		background: #fff;
+		border: 1px solid var(--border);
+		border-radius: 8px;
+		overflow: hidden;
+		text-decoration: none;
+		color: inherit;
+		display: flex;
+		flex-direction: column;
+		position: relative;
+		transition: background 0.15s;
+	}
+	.article-card:hover {
+		background: #fafafa;
+	}
+	.article-card:hover .article-arrow { opacity: 1; transform: translateX(0); }
+	.article-card--muted { opacity: 0.55; pointer-events: none; }
+	.article-thumb {
+		width: 100%;
+		aspect-ratio: 16/9;
+		background: var(--surface);
+	}
+	.article-body {
+		padding: 1.5rem 1.5rem 0.75rem;
+		flex: 1;
+		display: flex;
+		flex-direction: column;
+		gap: 0.625rem;
+	}
+	.article-meta {
+		display: flex;
+		align-items: center;
+		gap: 0.5rem;
+	}
+	.article-title {
+		font-size: 1rem;
+		font-weight: 400;
+		line-height: 1.35;
+		letter-spacing: -0.015em;
+		color: var(--text-1);
+	}
+	.article-excerpt {
+		font-size: 0.8125rem;
+		color: var(--text-2);
+		line-height: 1.6;
+	}
+	.article-footer {
+		padding: 0.75rem 1.5rem 1.25rem;
+		display: flex;
+		justify-content: flex-end;
+	}
+	.article-arrow {
+		font-size: 1rem;
+		color: var(--text-1);
+		opacity: 0;
+		transform: translateX(-6px);
+		transition: opacity 0.2s, transform 0.2s;
+	}
+
+	/* ─── Footer ─────────────────────────────────────────────── */
+	.blog-footer {
+		border-top: 1px solid var(--border);
+		padding: 2rem 2rem;
+	}
+	.footer-inner {
+		max-width: var(--max-w);
+		margin: 0 auto;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		flex-wrap: wrap;
+		gap: 1.5rem;
+	}
+	.footer-logo {
+		display: flex; align-items: center;
+	}
+	.footer-logo img { height: 22px; width: auto; }
+	.footer-policies { display: flex; align-items: center; gap: 0.5rem; }
+	.footer-policies a {
+		font-size: 0.8125rem; color: var(--text-2);
+		text-decoration: none; transition: color 0.15s;
+	}
+	.footer-policies a:hover { color: var(--text-1); }
+	.footer-sep { color: var(--text-3); font-size: 0.75rem; }
+	.footer-copy { font-size: 0.75rem; color: var(--text-3); }
+
+	/* ─── Responsive ─────────────────────────────────────────── */
+	@media (max-width: 900px) {
+		.articles-grid { grid-template-columns: repeat(2, 1fr); }
+		.featured-card { grid-template-columns: 1fr; }
+		.featured-thumb { min-height: 200px; }
+	}
+	@media (max-width: 600px) {
+		.articles-grid { grid-template-columns: 1fr; }
+		.blog-header h1 { font-size: 2rem; }
+		.footer-inner { flex-direction: column; align-items: flex-start; gap: 1rem; }
+		.footer-copy { margin-left: 0; }
+	}
+</style>

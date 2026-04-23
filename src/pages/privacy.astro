@@ -1,0 +1,222 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Nav from '../components/Nav.astro';
+---
+
+<Layout title="Privacy Policy | Crator" description="Privacy Policy for Vibework by Context AI Technologies Pte. Ltd.">
+
+	<div class="page-rails" aria-hidden="true"></div>
+	<Nav active="security" />
+
+	<main class="policy-main">
+		<header class="policy-header">
+			<p class="policy-updated">Last Updated at 03/02/2025</p>
+			<h1>Privacy Policy</h1>
+		</header>
+
+		<div class="policy-content">
+			<p class="policy-intro">Context AI Technologies Pte. Ltd. ("we," "our," or "us") operates Vibework, a desktop AI agents platform (the "Application" or "Vibework"). This Privacy Policy explains how we collect, use, disclose, and protect your information when you use Vibework.</p>
+
+			<h2>1. Information We Collect</h2>
+			
+			<h3>1.1 Account Information</h3>
+			<p>When you create a Vibework account, we collect: Name and email address, Password (encrypted and never stored in plain text), Payment information (processed by third-party payment processors; we do not store full credit card details), Subscription plan and billing history.</p>
+			
+			<h3>1.2 Device and Usage Information</h3>
+			<p>We automatically collect: Device information (OS type and version, hardware specifications, device identifiers), Application usage data (features used, commands executed, session duration, interaction patterns), Technical logs (error reports, crash data, performance metrics), IP address and general location information.</p>
+			
+			<h3>1.3 AI Interaction Data</h3>
+			<p>When you interact with Vibework's AI agent, we collect: Your prompts and commands, AI responses, Conversation history, Feedback and ratings.</p>
+			
+			<h3>1.4 File Access Data</h3>
+			<p>IMPORTANT: Vibework only accesses files when you explicitly grant permission. When you grant permission, we may collect file metadata, contents, and access logs. You can revoke permissions at any time through settings.</p>
+			
+			<h3>1.5 Command and Automation Data</h3>
+			<p>We collect command and automation history, outputs, and execution logs when you authorize Vibework to perform actions on your behalf.</p>
+
+			<h2>2. How We Use Your Information</h2>
+			<p>We use your information to: Provide Vibework's AI agent services, Improve our products and features, Manage accounts and provide support, Ensure security and prevent fraud, Send optional communications with your consent.</p>
+
+			<h2>3. Third-Party AI Service Providers</h2>
+			<p>Vibework uses Anthropic (Claude AI), Exa (search), and Composio (tool integrations). Your data is processed by these providers to deliver Vibework's functionality. We have data processing agreements with all providers.</p>
+
+			<h2>4. Data Sharing and Disclosure</h2>
+			<p>We do not sell your personal information. We only share data with: Third-party AI providers (as described above), Service providers (hosting, payments, email), In business transfers, When required by law, With your consent.</p>
+
+			<h2>5. Data Security</h2>
+			<p>We implement: TLS/SSL encryption in transit, Encryption at rest, Limited access controls, Two-factor authentication (optional), Regular security audits, Secure cloud infrastructure.</p>
+
+			<h2>6. Data Retention</h2>
+			<p>Account info: Duration of account + 60 days, Conversation history: Indefinitely (unless deleted), File access logs: 90 days, Payment info: 7 years (regulatory requirement), Backups: Up to 90 days.</p>
+
+			<h2>7. Your Privacy Rights</h2>
+			<p>You can: Access your data through settings, Request a copy in portable format, Correct or update your information, Delete your account and data, Opt out of optional communications.</p>
+
+			<h2>8. International Transfers</h2>
+			<p>Your data may be transferred to the US or other countries where our service providers operate. We implement safeguards including standard contractual clauses.</p>
+
+			<h2>9. Children's Privacy</h2>
+			<p>Vibework is not for children under 13. We do not knowingly collect data from minors.</p>
+
+			<h2>10. Changes to This Policy</h2>
+			<p>We may update this policy periodically. Changes will be reflected by updating the "Last Updated" date. Continued use after changes constitutes acceptance.</p>
+
+			<h2>11. Contact Us</h2>
+			<p>
+				<strong>Context AI Technologies Pte. Ltd.</strong><br>
+				59 Ubi Avenue 1, #03-11<br>
+				Singapore 408938<br><br>
+				Email: shrivardhan@hoursense.com<br>
+				Phone: +65 8656 9413
+			</p>
+		</div>
+	</main>
+
+	<footer class="policy-footer">
+		<div class="footer-inner">
+			<a href="/" class="footer-logo">
+				<img src="https://www.cratorlabs.ai/_next/image?url=%2Ffull-logo.png&w=256&q=75" alt="Crator" height="22" />
+			</a>
+			<div class="footer-policies">
+				<a href="/privacy">Privacy</a>
+				<span class="footer-sep">·</span>
+				<a href="/terms-of-service">Terms</a>
+				<span class="footer-sep">·</span>
+				<a href="https://trust.cratorlabs.ai" target="_blank" rel="noopener">Security</a>
+			</div>
+			<p class="footer-copy">&copy; 2026 Crator Labs. Applied AI Company, Singapore.</p>
+		</div>
+	</footer>
+
+</Layout>
+
+<style>
+	:root {
+		--bg: #fff;
+		--surface: #f7f7f7;
+		--border: rgba(0,0,0,0.08);
+		--border-mid: rgba(0,0,0,0.14);
+		--text-1: #000;
+		--text-2: rgba(0,0,0,0.5);
+		--text-3: rgba(0,0,0,0.3);
+		--accent: #4A93D6;
+		--max-w: 720px;
+	}
+
+	.page-rails {
+		position: fixed;
+		top: 0; bottom: 0;
+		left: 50%; transform: translateX(-50%);
+		width: min(var(--max-w), 100vw);
+		pointer-events: none;
+		z-index: 40;
+		border-left: 1px solid var(--border);
+		border-right: 1px solid var(--border);
+	}
+
+	.policy-main {
+		max-width: var(--max-w);
+		margin: 0 auto;
+		padding: 8rem 2rem 6rem;
+	}
+
+	.policy-header {
+		margin-bottom: 3rem;
+		padding-bottom: 2rem;
+		border-bottom: 1px solid var(--border);
+	}
+
+	.policy-updated {
+		font-size: 0.6875rem;
+		font-weight: 600;
+		text-transform: uppercase;
+		letter-spacing: 0.08em;
+		color: var(--text-3);
+		margin-bottom: 1rem;
+	}
+
+	.policy-header h1 {
+		font-size: clamp(2rem, 4vw, 2.75rem);
+		font-weight: 300;
+		letter-spacing: -0.03em;
+		line-height: 1.1;
+		color: var(--text-1);
+	}
+
+	.policy-content {
+		font-size: 0.9375rem;
+		color: var(--text-2);
+		line-height: 1.8;
+	}
+
+	.policy-intro {
+		margin-bottom: 2rem;
+	}
+
+	.policy-content h2 {
+		font-family: 'IBM Plex Sans', sans-serif;
+		font-size: 1.25rem;
+		font-weight: 500;
+		color: var(--text-1);
+		letter-spacing: -0.02em;
+		margin-top: 2.5rem;
+		margin-bottom: 1rem;
+	}
+
+	.policy-content h3 {
+		font-size: 1rem;
+		font-weight: 500;
+		color: var(--text-1);
+		margin-top: 1.5rem;
+		margin-bottom: 0.5rem;
+	}
+
+	.policy-content p {
+		margin-bottom: 1rem;
+	}
+
+	.policy-content ul, .policy-content ol {
+		margin: 1rem 0 1rem 1.5rem;
+	}
+
+	.policy-content li {
+		margin-bottom: 0.5rem;
+	}
+
+	.policy-content strong {
+		color: var(--text-1);
+		font-weight: 500;
+	}
+
+	/* Footer */
+	.policy-footer {
+		border-top: 1px solid var(--border);
+		padding: 2rem 0;
+	}
+	.footer-inner {
+		max-width: var(--max-w);
+		margin: 0 auto;
+		padding: 0 2rem;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		flex-wrap: wrap;
+		gap: 1.5rem;
+	}
+	.footer-logo {
+		display: flex; align-items: center;
+	}
+	.footer-logo img { height: 22px; width: auto; }
+	.footer-policies { display: flex; align-items: center; gap: 0.5rem; }
+	.footer-policies a {
+		font-size: 0.8125rem; color: var(--text-2);
+		text-decoration: none; transition: color 0.15s;
+	}
+	.footer-policies a:hover { color: var(--text-1); }
+	.footer-sep { color: var(--text-3); font-size: 0.75rem; }
+	.footer-copy { font-size: 0.75rem; color: var(--text-3); }
+
+	@media (max-width: 600px) {
+		.footer-inner { flex-direction: column; align-items: flex-start; gap: 1rem; }
+	}
+</style>
