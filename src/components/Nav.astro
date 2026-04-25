@@ -5,6 +5,20 @@ interface Props {
 const { active } = Astro.props;
 ---
 
+<!-- Backdrop (outside nav pill so it covers full screen) -->
+<div class="mobile-menu-backdrop" id="mobile-backdrop"></div>
+
+<!-- Mobile slide-down menu (outside nav pill to avoid clipping) -->
+<div class="mobile-menu" id="mobile-menu">
+  <div class="mobile-menu-inner">
+    <a href="/">Product</a>
+    <a href="/portfolio">Work</a>
+    <a href="/blog">Blog</a>
+    <a href="https://trust.cratorlabs.ai" target="_blank" rel="noopener">Security</a>
+    <a href="/contact-us" class="mobile-menu-cta">Book a Meeting</a>
+  </div>
+</div>
+
 <nav class="nav">
   <div class="nav-inner">
     <a href="/" class="logo">
@@ -17,58 +31,57 @@ const { active } = Astro.props;
       <a href="https://trust.cratorlabs.ai" class={active === 'security' ? 'active' : ''} target="_blank" rel="noopener">Security</a>
     </div>
     <a href="/contact-us" class="nav-cta">Book a Meeting</a>
-    
-    <button class="nav-hamburger" id="hamburger" aria-label="Menu">
+
+    <button class="nav-hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
       <span></span>
       <span></span>
       <span></span>
     </button>
   </div>
-  
-  <div class="mobile-menu" id="mobile-menu">
-    <div class="mobile-menu-inner">
-      <a href="/">Product</a>
-      <a href="/portfolio">Work</a>
-      <a href="/blog">Blog</a>
-      <a href="https://trust.cratorlabs.ai" target="_blank" rel="noopener">Security</a>
-      <a href="/contact-us" class="mobile-menu-cta">Book a Meeting</a>
-    </div>
-  </div>
 </nav>
 
 <script>
-  const hamburger = document.getElementById('hamburger');
+  const hamburger = document.getElementById('hamburger') as HTMLButtonElement | null;
   const mobileMenu = document.getElementById('mobile-menu');
-  const backdrop = document.getElementById('mobile-backdrop');
-  
+  const backdrop   = document.getElementById('mobile-backdrop');
+
   function closeMenu() {
     hamburger?.classList.remove('active');
+    hamburger?.setAttribute('aria-expanded', 'false');
+    hamburger?.setAttribute('aria-label', 'Open menu');
     mobileMenu?.classList.remove('active');
     backdrop?.classList.remove('active');
     document.body.style.overflow = '';
   }
-  
+
   function openMenu() {
     hamburger?.classList.add('active');
+    hamburger?.setAttribute('aria-expanded', 'true');
+    hamburger?.setAttribute('aria-label', 'Close menu');
     mobileMenu?.classList.add('active');
     backdrop?.classList.add('active');
     document.body.style.overflow = 'hidden';
   }
-  
+
   hamburger?.addEventListener('click', () => {
-    if (mobileMenu.classList.contains('active')) {
+    if (mobileMenu?.classList.contains('active')) {
       closeMenu();
     } else {
       openMenu();
     }
   });
-  
+
   // Close when clicking backdrop
   backdrop?.addEventListener('click', closeMenu);
-  
+
   // Close when clicking a menu link
   mobileMenu?.querySelectorAll('a').forEach(link => {
     link.addEventListener('click', closeMenu);
+  });
+
+  // Close on Escape key
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeMenu();
   });
 </script>
 
@@ -78,7 +91,7 @@ const { active } = Astro.props;
     top: 1.25rem;
     left: 50%;
     transform: translateX(-50%);
-    z-index: 50;
+    z-index: 200;
     border: 1px solid rgba(0,0,0,0.08);
     background: rgba(255,255,255,0.88);
     backdrop-filter: blur(20px);
@@ -125,6 +138,7 @@ const { active } = Astro.props;
   }
   .nav-links a:hover,
   .nav-links a.active { color: #000; }
+
   .nav-cta {
     margin-left: auto;
     color: #000;
@@ -142,101 +156,119 @@ const { active } = Astro.props;
     border-color: rgba(0,0,0,0.3);
     background: rgba(0,0,0,0.04);
   }
-  
+
+  /* Hamburger button — hidden by default, shown on mobile */
   .nav-hamburger {
     display: none;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
     gap: 5px;
-    width: 28px;
-    height: 28px;
+    width: 36px;
+    height: 36px;
     background: none;
     border: none;
     cursor: pointer;
     padding: 4px;
     margin-left: auto;
-  }
-  @media (max-width: 900px) {
-    .nav-hamburger {
-      display: flex;
-    }
+    flex-shrink: 0;
   }
   .nav-hamburger span {
     display: block;
-    width: 100%;
+    width: 20px;
     height: 2px;
     background: #000;
     border-radius: 2px;
-    transition: transform 0.2s, opacity 0.2s;
+    transition: transform 0.25s ease, opacity 0.25s ease;
+    transform-origin: center;
   }
   .nav-hamburger.active span:nth-child(1) {
     transform: translateY(7px) rotate(45deg);
   }
   .nav-hamburger.active span:nth-child(2) {
     opacity: 0;
+    transform: scaleX(0);
   }
   .nav-hamburger.active span:nth-child(3) {
     transform: translateY(-7px) rotate(-45deg);
   }
 
-  /* Mobile Menu */
+  /* ── Backdrop ─────────────────────────────── */
   .mobile-menu-backdrop {
+    display: none;
     position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background: rgba(0,0,0,0.3);
-    z-index: 99;
+    inset: 0;
+    background: rgba(0,0,0,0.35);
+    z-index: 149;
     opacity: 0;
-    pointer-events: none;
-    transition: opacity 0.3s;
+    transition: opacity 0.3s ease;
   }
   .mobile-menu-backdrop.active {
     opacity: 1;
-    pointer-events: auto;
   }
+
+  /* ── Mobile slide-down menu ───────────────── */
+  .mobile-menu {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: #fff;
+    z-index: 150;
+    transform: translateY(-100%);
+    transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 8px 32px rgba(0,0,0,0.12);
+  }
+  .mobile-menu.active {
+    transform: translateY(0);
+  }
+  .mobile-menu-inner {
+    padding: 6rem 1.5rem 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+  .mobile-menu a {
+    color: #111;
+    text-decoration: none;
+    font-size: 1.0625rem;
+    font-weight: 450;
+    padding: 0.875rem 0;
+    border-bottom: 1px solid rgba(0,0,0,0.07);
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    transition: color 0.15s;
+  }
+  .mobile-menu a:hover { color: rgba(0,0,0,0.5); }
+  .mobile-menu-cta {
+    display: block !important;
+    text-align: center;
+    padding: 0.8125rem 1.5rem !important;
+    background: #000;
+    color: #fff !important;
+    border-radius: 8px;
+    font-weight: 500 !important;
+    margin-top: 1.5rem;
+    border-bottom: none !important;
+    transition: background 0.15s, opacity 0.15s !important;
+  }
+  .mobile-menu-cta:hover {
+    background: #222;
+    color: #fff !important;
+  }
+
+  /* ── Mobile breakpoint ────────────────────── */
   @media (max-width: 900px) {
-    .mobile-menu {
-      display: block;
-      position: fixed;
-      top: -100%;
-      left: 0;
-      width: 100%;
-      background: #fff;
-      z-index: 100;
-      transition: top 0.3s ease;
+    .nav {
+      top: 0.75rem;
+      width: calc(100vw - 2rem);
+      border-radius: 10px;
     }
-    .mobile-menu.active {
-      top: 0;
-    }
-    .mobile-menu-inner {
-      padding: 6rem 2rem 2rem;
-      display: flex;
-      flex-direction: column;
-      gap: 1.5rem;
-    }
-    .mobile-menu a {
-      color: #000;
-      text-decoration: none;
-      font-size: 1.125rem;
-      font-weight: 450;
-      padding: 0.5rem 0;
-      border-bottom: 1px solid rgba(0,0,0,0.08);
-    }
-    .mobile-menu-cta {
-      display: inline-block;
-      text-align: center;
-      padding: 0.75rem 1.5rem;
-      background: #000;
-      color: #fff !important;
-      border-radius: 8px;
-      font-weight: 500;
-      margin-top: 1rem;
-    }
-    .nav { top: 0.75rem; width: calc(100vw - 2rem); border-radius: 10px; }
     .nav-links { display: none; }
-    .nav-cta { display: none; }
+    .nav-cta   { display: none; }
     .nav-hamburger { display: flex; }
+
+    .mobile-menu-backdrop { display: block; }
+    .mobile-menu          { display: block; }
   }
 </style>
