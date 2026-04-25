@@ -258,20 +258,33 @@ import Nav from '../components/Nav.astro';
 		<div class="trusted-by-inner">
 			<span class="trusted-by-label">Trusted by</span>
 			<div class="trusted-by-content">
+				<!-- 4 sets of logos in one flat track; animation scrolls -50% = 2 sets seamlessly -->
 				<div class="trusted-by-track">
+					<!-- Set 1 -->
 					<div class="logo-item"><img src="https://www.cratorlabs.ai/_next/image?url=%2Flogos%2Fflow-coffee.avif&w=128&q=75" alt="Flow Coffee" class="logo-black" /></div>
 					<div class="logo-item"><img src="https://www.cratorlabs.ai/_next/image?url=%2Flogos%2Fkinetic.png&w=128&q=75" alt="Kinetic Group" class="logo-black" /></div>
 					<div class="logo-item"><img src="https://www.cratorlabs.ai/logos/lm-trading.svg" alt="LM Trading" class="logo-black" /></div>
 					<div class="logo-item"><img src="https://wp.logos-download.com/wp-content/uploads/2022/11/Nanyang_Technological_University_Logo.png?dl" alt="NTU" class="logo-black" /></div>
-				</div><div class="trusted-by-track">
-					<div class="logo-item"><img src="https://www.cratorlabs.ai/_next/image?url=%2Flogos%2Fflow-coffee.avif&w=128&q=75" alt="Flow Coffee" class="logo-black" /></div>
-					<div class="logo-item"><img src="https://www.cratorlabs.ai/_next/image?url=%2Flogos%2Fkinetic.png&w=128&q=75" alt="Kinetic Group" class="logo-black" /></div>
-					<div class="logo-item"><img src="https://www.cratorlabs.ai/logos/lm-trading.svg" alt="LM Trading" class="logo-black" /></div>
-					<div class="logo-item"><img src="https://wp.logos-download.com/wp-content/uploads/2022/11/Nanyang_Technological_University_Logo.png?dl" alt="NTU" class="logo-black" /></div>
+					<!-- Set 2 -->
+					<div class="logo-item" aria-hidden="true"><img src="https://www.cratorlabs.ai/_next/image?url=%2Flogos%2Fflow-coffee.avif&w=128&q=75" alt="" class="logo-black" /></div>
+					<div class="logo-item" aria-hidden="true"><img src="https://www.cratorlabs.ai/_next/image?url=%2Flogos%2Fkinetic.png&w=128&q=75" alt="" class="logo-black" /></div>
+					<div class="logo-item" aria-hidden="true"><img src="https://www.cratorlabs.ai/logos/lm-trading.svg" alt="" class="logo-black" /></div>
+					<div class="logo-item" aria-hidden="true"><img src="https://wp.logos-download.com/wp-content/uploads/2022/11/Nanyang_Technological_University_Logo.png?dl" alt="" class="logo-black" /></div>
+					<!-- Set 3 -->
+					<div class="logo-item" aria-hidden="true"><img src="https://www.cratorlabs.ai/_next/image?url=%2Flogos%2Fflow-coffee.avif&w=128&q=75" alt="" class="logo-black" /></div>
+					<div class="logo-item" aria-hidden="true"><img src="https://www.cratorlabs.ai/_next/image?url=%2Flogos%2Fkinetic.png&w=128&q=75" alt="" class="logo-black" /></div>
+					<div class="logo-item" aria-hidden="true"><img src="https://www.cratorlabs.ai/logos/lm-trading.svg" alt="" class="logo-black" /></div>
+					<div class="logo-item" aria-hidden="true"><img src="https://wp.logos-download.com/wp-content/uploads/2022/11/Nanyang_Technological_University_Logo.png?dl" alt="" class="logo-black" /></div>
+					<!-- Set 4 (mirror of set 3 — seamless at the -50% reset point) -->
+					<div class="logo-item" aria-hidden="true"><img src="https://www.cratorlabs.ai/_next/image?url=%2Flogos%2Fflow-coffee.avif&w=128&q=75" alt="" class="logo-black" /></div>
+					<div class="logo-item" aria-hidden="true"><img src="https://www.cratorlabs.ai/_next/image?url=%2Flogos%2Fkinetic.png&w=128&q=75" alt="" class="logo-black" /></div>
+					<div class="logo-item" aria-hidden="true"><img src="https://www.cratorlabs.ai/logos/lm-trading.svg" alt="" class="logo-black" /></div>
+					<div class="logo-item" aria-hidden="true"><img src="https://wp.logos-download.com/wp-content/uploads/2022/11/Nanyang_Technological_University_Logo.png?dl" alt="" class="logo-black" /></div>
 				</div>
 			</div>
 		</div>
 	</div>
+
 
 <!-- AI Agents -->
 	<section class="section" id="agents">
@@ -604,24 +617,7 @@ document.querySelectorAll('.sidebar-item[data-view]').forEach(btn => {
 	});
 });
 
-// Mobile menu toggle
-const hamburger = document.querySelector('.nav-hamburger');
-const mobileMenu = document.querySelector('.mobile-menu');
-
-hamburger?.addEventListener('click', () => {
-	hamburger.classList.toggle('active');
-	mobileMenu.classList.toggle('active');
-	document.body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : '';
-});
-
-// Close mobile menu when clicking a link
-document.querySelectorAll('.mobile-menu a').forEach(link => {
-	link.addEventListener('click', () => {
-		hamburger.classList.remove('active');
-		mobileMenu.classList.remove('active');
-		document.body.style.overflow = '';
-	});
-});
+// Mobile menu is handled in Nav.astro
 
 // Scroll animation for software cards - load only
 const loadObserver = new IntersectionObserver((entries) => {
@@ -1127,19 +1123,20 @@ document.querySelectorAll('.faq-question').forEach(btn => {
 	}
 
 	.trusted-by-section {
-		padding: 3rem 2rem;
+		padding: 3rem 0;
 		background: var(--surface);
 		text-align: center;
 		overflow: hidden;
 	}
 
 	.trusted-by-inner {
+		width: 100%;
 		max-width: var(--max-w);
 		margin: 0 auto;
 		display: flex;
 		flex-direction: column;
 		align-items: center;
-		gap: 1rem;
+		gap: 1.25rem;
 	}
 
 	.trusted-by-label {
@@ -1147,24 +1144,37 @@ document.querySelectorAll('.faq-question').forEach(btn => {
 		font-weight: 500;
 		color: var(--text-2);
 		text-transform: uppercase;
-		letter-spacing: 0.05em;
+		letter-spacing: 0.08em;
 	}
 
+	/* Rail that clips and fades the edges */
 	.trusted-by-content {
-		display: flex;
+		width: 100%;
 		overflow: hidden;
-		justify-content: center;
+		-webkit-mask-image: linear-gradient(
+			to right,
+			transparent 0%,
+			#000 8%,
+			#000 92%,
+			transparent 100%
+		);
+		mask-image: linear-gradient(
+			to right,
+			transparent 0%,
+			#000 8%,
+			#000 92%,
+			transparent 100%
+		);
 	}
 
+	/* Single track — contains original + duplicate logos side-by-side */
 	.trusted-by-track {
 		display: flex;
-		gap: 4rem;
-		animation: marquee-scroll 25s linear infinite;
-		flex-shrink: 0;
-	}
-
-	.trusted-by-track + .trusted-by-track {
-		margin-left: 4rem;
+		width: max-content;
+		gap: 5rem;
+		padding: 0 2.5rem; /* half-gap on each side so seam gap = gap */
+		animation: trusted-scroll 18s linear infinite;
+		will-change: transform;
 	}
 
 	.trusted-by-section .logo-item {
@@ -1172,15 +1182,25 @@ document.querySelectorAll('.faq-question').forEach(btn => {
 		display: flex;
 		align-items: center;
 		justify-content: center;
+		height: 36px;
 	}
 
 	.trusted-by-section .logo-black {
-		height: 28px;
+		height: 26px;
 		width: auto;
-		max-width: 100px;
+		max-width: 110px;
 		object-fit: contain;
 		filter: brightness(0);
-		opacity: 0.5;
+		opacity: 0.45;
+		transition: opacity 0.2s;
+	}
+	.trusted-by-section .logo-black:hover {
+		opacity: 0.75;
+	}
+
+	@keyframes trusted-scroll {
+		0%   { transform: translateX(0); }
+		100% { transform: translateX(-50%); }
 	}
 
 	/* ─── Buttons ────────────────────────────────────────────── */
@@ -1638,6 +1658,7 @@ document.querySelectorAll('.faq-question').forEach(btn => {
 		display: flex;
 		flex-direction: column;
 		gap: 2rem;
+		align-items: flex-start;
 	}
 	.founders-image-wrap {
 		margin-bottom: 2rem;
@@ -1738,6 +1759,7 @@ document.querySelectorAll('.faq-question').forEach(btn => {
 	.section--dark .section-inner {
 		padding: 8rem 2rem;
 		max-width: none;
+		text-align: center;
 	}
 	.cta-eyebrow {
 		font-size: 0.6875rem;
@@ -1831,8 +1853,8 @@ document.querySelectorAll('.faq-question').forEach(btn => {
 		font-size: 1rem;
 		color: rgba(255,255,255,0.45);
 		line-height: 1.7;
-		max-width: 440px;
-		margin-bottom: 2.5rem;
+		max-width: 480px;
+		margin: 0 auto 2.5rem;
 	}
 	.btn-primary-inv {
 		display: inline-flex;
@@ -2476,10 +2498,10 @@ document.querySelectorAll('.faq-question').forEach(btn => {
 		.meta-stat { display: flex; align-items: baseline; gap: 0.5rem; }
 		.stat-value { font-size: 1.5rem; }
 
-		.section--dark .section-inner { padding: 4rem 1rem; }
-		.cta-heading { font-size: clamp(2.25rem, 9vw, 3rem); }
-		.cta-sub { font-size: 0.9375rem; margin-bottom: 2rem; }
-		.btn-primary-inv { width: 100%; justify-content: center; }
+		.section--dark .section-inner { padding: 4rem 1.5rem; text-align: center; }
+		.cta-heading { font-size: clamp(2rem, 8vw, 2.75rem); }
+		.cta-sub { font-size: 0.9375rem; margin-bottom: 2rem; max-width: 100%; }
+		.btn-primary-inv { display: inline-flex; width: auto; }
 
 		.footer { padding: 1.5rem 1rem; }
 		.footer-inner { flex-direction: column; align-items: flex-start; gap: 1.25rem; }
