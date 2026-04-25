@@ -19,7 +19,7 @@ import Nav from '../components/Nav.astro';
 			<p class="section-label">Client Work</p>
 			<div class="cases-grid">
 				<a href="/portfolio/flow-coffee-sales-agent" class="case-card">
-					<div class="case-thumb"></div>
+					<div class="case-thumb"><img src="/images/sales-agent.webp" alt="Sales Agent" loading="lazy" /></div>
 					<div class="case-body">
 						<div class="case-meta">
 							<span class="post-tag">AI Agent</span>
@@ -34,7 +34,7 @@ import Nav from '../components/Nav.astro';
 					</div>
 				</a>
 				<a href="/portfolio/flow-coffee-operations-agent" class="case-card">
-					<div class="case-thumb"></div>
+					<div class="case-thumb"><img src="/images/operations-agent.webp" alt="Operations Agent" loading="lazy" /></div>
 					<div class="case-body">
 						<div class="case-meta">
 							<span class="post-tag">AI Agent</span>
@@ -49,7 +49,7 @@ import Nav from '../components/Nav.astro';
 					</div>
 				</a>
 				<a href="/portfolio/flow-coffee-support-agent" class="case-card">
-					<div class="case-thumb"></div>
+					<div class="case-thumb"><img src="/images/support-agent.webp" alt="Support Agent" loading="lazy" /></div>
 					<div class="case-body">
 						<div class="case-meta">
 							<span class="post-tag">AI Agent</span>
@@ -64,7 +64,7 @@ import Nav from '../components/Nav.astro';
 					</div>
 				</a>
 				<a href="/portfolio/flow-coffee-web-app" class="case-card">
-					<div class="case-thumb"></div>
+					<div class="case-thumb"><img src="/images/ai-native-erp.webp" alt="AI-Native ERP" loading="lazy" /></div>
 					<div class="case-body">
 						<div class="case-meta">
 							<span class="post-tag">Software</span>
@@ -79,7 +79,7 @@ import Nav from '../components/Nav.astro';
 					</div>
 				</a>
 				<a href="/portfolio/hoursense-legal-billing" class="case-card">
-					<div class="case-thumb"></div>
+					<div class="case-thumb"><img src="/images/hour-sense.webp" alt="HourSense" loading="lazy" /></div>
 					<div class="case-body">
 						<div class="case-meta">
 							<span class="post-tag">AI SaaS</span>
@@ -255,14 +255,20 @@ import Nav from '../components/Nav.astro';
 		font-weight: 500;
 	}
 
-	/* ─── Grid ───────────────────────────────────────────────── */
+/* ─── Grid ───────────────────────────────────────────────── */
 	.cases-grid {
 		display: grid;
 		grid-template-columns: repeat(3, 1fr);
 		gap: 1.25rem;
 	}
+	@media (max-width: 900px) {
+		.cases-grid { grid-template-columns: repeat(2, 1fr); }
+	}
+	@media (max-width: 600px) {
+		.cases-grid { grid-template-columns: 1fr; }
+	}
 
-	/* ─── Card ───────────────────────────────────────────────── */
+/* ─── Card ───────────────────────────────────────────────── */
 	.case-card {
 		background: #fff;
 		border: 1px solid var(--border);
@@ -281,7 +287,13 @@ import Nav from '../components/Nav.astro';
 	.case-thumb {
 		width: 100%;
 		aspect-ratio: 16/9;
-		background: var(--surface);
+		overflow: hidden;
+		background: #f5f5f5;
+	}
+	.case-thumb img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
 	}
 	.case-body {
 		padding: 1.5rem 1.5rem 0.75rem;
