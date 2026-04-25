@@ -4,224 +4,196 @@ import Nav from '../components/Nav.astro';
 ---
 
 <Layout title="Book a Demo | Crator Labs">
-  <div class="page-rails" aria-hidden="true"></div>
-  <Nav />
 
-  <main class="demo-main">
-    <header class="demo-header">
-      <p class="demo-eyebrow">Book a Demo</p>
-      <h1>Let's talk AI.</h1>
-      <p class="demo-tagline">Schedule a call and we'll show you what's possible.</p>
-    </header>
+	<div class="page-rails" aria-hidden="true"></div>
 
-    <section class="demo-content">
-      <div class="cal-embed" id="cal-embed">
-        <div class="cal-placeholder">
-          <div class="cal-icon">
-            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-              <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
-              <line x1="16" y1="2" x2="16" y2="6"/>
-              <line x1="8" y1="2" x2="8" y2="6"/>
-              <line x1="3" y1="10" x2="21" y2="10"/>
-            </svg>
-          </div>
-          <p>Loading calendar...</p>
-        </div>
-      </div>
-    </section>
+	<Nav />
 
-    <div class="demo-fallback">
-      <p>Prefer to reach out directly?</p>
-      <a href="mailto:hello@cratorlabs.ai">hello@cratorlabs.ai</a>
-    </div>
-  </main>
+	<main class="blog-main">
 
-  <footer class="demo-footer">
-    <div class="footer-inner">
-      <a href="/" class="footer-logo">
-        <img src="https://www.cratorlabs.ai/_next/image?url=%2Ffull-logo.png&w=256&q=75" alt="Crator" height="22" />
-      </a>
-      <div class="footer-policies">
-        <a href="/privacy">Privacy</a>
-        <span class="footer-sep">·</span>
-        <a href="/terms-of-service">Terms</a>
-      </div>
-      <p class="footer-copy">&copy; 2026 Crator Labs.</p>
-    </div>
-  </footer>
+		<header class="blog-header">
+			<p class="blog-eyebrow">Book a Demo</p>
+			<h1>Let's talk AI.</h1>
+			<p class="blog-tagline">Schedule a call and we'll show you what's possible.</p>
+		</header>
+
+		<section class="cal-embed">
+			<div class="cal-placeholder">
+				<div class="cal-icon">
+					<svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+						<rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+						<line x1="16" y1="2" x2="16" y2="6"/>
+						<line x1="8" y1="2" x2="8" y2="6"/>
+						<line x1="3" y1="10" x2="21" y2="10"/>
+					</svg>
+				</div>
+				<p>Loading calendar...</p>
+			</div>
+		</section>
+
+		<section class="demo-fallback">
+			<p>Prefer to reach out directly?</p>
+			<a href="mailto:hello@cratorlabs.ai">hello@cratorlabs.ai</a>
+		</section>
+
+	</main>
+
+	<footer class="blog-footer">
+		<div class="footer-inner">
+			<a href="/" class="footer-logo">
+				<img src="https://www.cratorlabs.ai/_next/image?url=%2Ffull-logo.png&w=256&q=75" alt="Crator" height="22" />
+			</a>
+			<div class="footer-policies">
+				<a href="/privacy">Privacy</a>
+				<span class="footer-sep">·</span>
+				<a href="/terms-of-service">Terms</a>
+				<span class="footer-sep">·</span>
+				<a href="https://trust.cratorlabs.ai" target="_blank" rel="noopener">Security</a>
+			</div>
+			<p class="footer-copy">&copy; 2026 Crator Labs. Applied AI Company, Singapore.</p>
+		</div>
+	</footer>
+
 </Layout>
 
-<style is:global>
-  :root {
-    --bg: #fff;
-    --surface: #f7f7f7;
-    --border: rgba(0,0,0,0.08);
-    --text-1: #000;
-    --text-2: rgba(0,0,0,0.6);
-    --text-3: rgba(0,0,0,0.4);
-    --max-w: 1072px;
-  }
-  html {
-    background: var(--bg);
-    color: var(--text-1);
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  }
-  body { margin: 0; padding: 0; }
-  a { color: inherit; text-decoration: none; }
-  .page-rails {
-    position: fixed;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 1px;
-    height: 100vh;
-    background: var(--border);
-    z-index: -1;
-  }
-  .page-rails::before,
-  .page-rails::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    height: 100vh;
-    width: 1px;
-    background: var(--border);
-  }
-  .page-rails::before { left: -240px; }
-  .page-rails::after { left: 240px; }
-
-  .post-tag {
-    display: inline-block;
-    font-size: 0.6875rem;
-    font-weight: 500;
-    text-transform: uppercase;
-    letter-spacing: 0.04em;
-    color: var(--text-2);
-    background: var(--surface);
-    padding: 0.25rem 0.5rem;
-    border-radius: 4px;
-  }
-  .post-date {
-    font-size: 0.75rem;
-    color: var(--text-3);
-  }
-
-  .demo-footer {
-    border-top: 1px solid var(--border);
-    padding: 2rem 2rem;
-  }
-  .footer-inner {
-    max-width: var(--max-w);
-    margin: 0 auto;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 1.5rem;
-  }
-  .footer-logo { display: flex; align-items: center; }
-  .footer-logo img { height: 22px; width: auto; }
-  .footer-policies { display: flex; align-items: center; gap: 0.5rem; }
-  .footer-policies a {
-    font-size: 0.8125rem;
-    color: var(--text-2);
-    text-decoration: none;
-    transition: color 0.15s;
-  }
-  .footer-policies a:hover { color: var(--text-1); }
-  .footer-sep { color: var(--text-3); font-size: 0.75rem; }
-  .footer-copy { font-size: 0.75rem; color: var(--text-3); margin: 0; }
-</style>
-
 <style>
-  .demo-main {
-    padding: 8rem 2rem 4rem;
-    max-width: var(--max-w);
-    margin: 0 auto;
-  }
+	:root {
+		--bg: #fff;
+		--surface: #f7f7f7;
+		--border: rgba(0,0,0,0.08);
+		--border-mid: rgba(0,0,0,0.14);
+		--text-1: #000;
+		--text-2: rgba(0,0,0,0.5);
+		--text-3: rgba(0,0,0,0.3);
+		--accent: #2563eb;
+		--max-w: 1120px;
+	}
 
-  .demo-header {
-    text-align: center;
-    margin-bottom: 3rem;
-  }
+	.page-rails {
+		position: fixed;
+		top: 0; bottom: 0;
+		left: 50%; transform: translateX(-50%);
+		width: min(var(--max-w), 100vw);
+		pointer-events: none;
+		z-index: 40;
+		border-left: 1px solid var(--border);
+		border-right: 1px solid var(--border);
+	}
 
-  .demo-eyebrow {
-    font-size: 0.8125rem;
-    font-weight: 500;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    color: var(--text-2);
-    margin: 0 0 1rem;
-  }
+	.blog-main {
+		max-width: var(--max-w);
+		margin: 0 auto;
+		padding: 8rem 2rem 6rem;
+	}
 
-  .demo-header h1 {
-    font-size: clamp(2rem, 5vw, 3rem);
-    font-weight: 400;
-    color: var(--text-1);
-    margin: 0 0 0.75rem;
-    letter-spacing: -0.03em;
-    line-height: 1.1;
-  }
+	.blog-header {
+		padding-bottom: 4rem;
+		border-bottom: 1px solid var(--border);
+		margin-bottom: 4rem;
+	}
+	.blog-eyebrow {
+		font-size: 0.6875rem;
+		font-weight: 700;
+		text-transform: uppercase;
+		letter-spacing: 0.1em;
+		color: var(--text-3);
+		margin-bottom: 1.25rem;
+	}
+	.blog-header h1 {
+		font-size: clamp(2.5rem, 5.5vw, 4rem);
+		font-weight: 300;
+		letter-spacing: -0.035em;
+		line-height: 1.08;
+		color: var(--text-1);
+		margin-bottom: 1.25rem;
+	}
+	.blog-tagline {
+		font-size: 1.0625rem;
+		color: var(--text-2);
+		line-height: 1.65;
+		max-width: 480px;
+	}
 
-  .demo-tagline {
-    font-size: 1.125rem;
-    color: var(--text-2);
-    margin: 0;
-  }
+	.cal-embed {
+		background: #fff;
+		border: 1px solid var(--border);
+		border-radius: 8px;
+		overflow: hidden;
+		min-height: 600px;
+	}
 
-  .demo-content {
-    background: #fff;
-    border: 1px solid var(--border);
-    border-radius: 8px;
-    overflow: hidden;
-    min-height: 600px;
-  }
+	.cal-placeholder {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		min-height: 600px;
+		color: var(--text-3);
+	}
 
-  .cal-placeholder {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    min-height: 600px;
-    color: var(--text-3);
-  }
+	.cal-icon {
+		margin-bottom: 1rem;
+		opacity: 0.5;
+	}
 
-  .cal-icon {
-    margin-bottom: 1rem;
-    opacity: 0.5;
-  }
+	.cal-placeholder p {
+		font-size: 0.875rem;
+	}
 
-  .cal-placeholder p {
-    font-size: 0.875rem;
-  }
+	.demo-fallback {
+		text-align: center;
+		margin-top: 2rem;
+		padding: 2rem;
+		background: var(--surface);
+		border-radius: 8px;
+	}
 
-  .demo-fallback {
-    text-align: center;
-    margin-top: 2rem;
-    padding: 1.5rem;
-    background: var(--surface);
-    border-radius: 8px;
-  }
+	.demo-fallback p {
+		font-size: 0.9375rem;
+		color: var(--text-2);
+		margin: 0 0 0.5rem;
+	}
 
-  .demo-fallback p {
-    font-size: 0.875rem;
-    color: var(--text-2);
-    margin: 0 0 0.5rem;
-  }
+	.demo-fallback a {
+		font-size: 1rem;
+		color: var(--text-1);
+		text-decoration: none;
+		font-weight: 500;
+	}
 
-  .demo-fallback a {
-    font-size: 1rem;
-    color: var(--text-1);
-    text-decoration: none;
-    font-weight: 500;
-  }
+	.demo-fallback a:hover {
+		text-decoration: underline;
+	}
 
-  .demo-fallback a:hover {
-    text-decoration: underline;
-  }
+	.blog-footer {
+		border-top: 1px solid var(--border);
+		padding: 2rem 2rem;
+	}
+	.footer-inner {
+		max-width: var(--max-w);
+		margin: 0 auto;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		flex-wrap: wrap;
+		gap: 1.5rem;
+	}
+	.footer-logo {
+		display: flex; align-items: center;
+	}
+	.footer-logo img { height: 22px; width: auto; }
+	.footer-policies { display: flex; align-items: center; gap: 0.5rem; }
+	.footer-policies a {
+		font-size: 0.8125rem; color: var(--text-2);
+		text-decoration: none; transition: color 0.15s;
+	}
+	.footer-policies a:hover { color: var(--text-1); }
+	.footer-sep { color: var(--text-3); font-size: 0.75rem; }
+	.footer-copy { font-size: 0.75rem; color: var(--text-3); }
 
-  @media (max-width: 640px) {
-    .demo-main { padding: 7rem 1.5rem 3rem; }
-    .demo-header h1 { font-size: 2.25rem; }
-  }
+	@media (max-width: 600px) {
+		.blog-header h1 { font-size: 2rem; }
+		.footer-inner { flex-direction: column; align-items: flex-start; gap: 1rem; }
+		.footer-copy { margin-left: 0; }
+	}
 </style>
