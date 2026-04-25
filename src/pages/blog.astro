@@ -1,6 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
 ---
 
 <Layout title="Blog | Crator Labs" description="Insights on automation, AI agents, and building AI-native businesses.">
@@ -91,22 +92,7 @@ import Nav from '../components/Nav.astro';
 
 	</main>
 
-	<!-- Footer -->
-	<footer class="blog-footer">
-		<div class="footer-inner">
-			<a href="/" class="footer-logo">
-				<img src="https://www.cratorlabs.ai/_next/image?url=%2Ffull-logo.png&w=256&q=75" alt="Crator" height="22" />
-			</a>
-			<div class="footer-policies">
-				<a href="/privacy">Privacy</a>
-				<span class="footer-sep">·</span>
-				<a href="/terms-of-service">Terms</a>
-				<span class="footer-sep">·</span>
-				<a href="https://trust.cratorlabs.ai" target="_blank" rel="noopener">Security</a>
-			</div>
-			<p class="footer-copy">&copy; 2026 Crator Labs. Applied AI Company, Singapore.</p>
-		</div>
-	</footer>
+	<Footer />
 
 </Layout>
 
@@ -317,33 +303,6 @@ import Nav from '../components/Nav.astro';
 		transition: opacity 0.2s, transform 0.2s;
 	}
 
-	/* ─── Footer ─────────────────────────────────────────────── */
-	.blog-footer {
-		border-top: 1px solid var(--border);
-		padding: 2rem 2rem;
-	}
-	.footer-inner {
-		max-width: var(--max-w);
-		margin: 0 auto;
-		display: flex;
-		align-items: center;
-		justify-content: space-between;
-		flex-wrap: wrap;
-		gap: 1.5rem;
-	}
-	.footer-logo {
-		display: flex; align-items: center;
-	}
-	.footer-logo img { height: 22px; width: auto; }
-	.footer-policies { display: flex; align-items: center; gap: 0.5rem; }
-	.footer-policies a {
-		font-size: 0.8125rem; color: var(--text-2);
-		text-decoration: none; transition: color 0.15s;
-	}
-	.footer-policies a:hover { color: var(--text-1); }
-	.footer-sep { color: var(--text-3); font-size: 0.75rem; }
-	.footer-copy { font-size: 0.75rem; color: var(--text-3); }
-
 	/* ─── Responsive ─────────────────────────────────────────── */
 	@media (max-width: 900px) {
 		.articles-grid { grid-template-columns: repeat(2, 1fr); }
@@ -353,7 +312,5 @@ import Nav from '../components/Nav.astro';
 	@media (max-width: 600px) {
 		.articles-grid { grid-template-columns: 1fr; }
 		.blog-header h1 { font-size: 2rem; }
-		.footer-inner { flex-direction: column; align-items: flex-start; gap: 1rem; }
-		.footer-copy { margin-left: 0; }
 	}
 </style>

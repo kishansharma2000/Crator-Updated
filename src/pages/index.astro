@@ -1,6 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
 ---
 
 <Layout title="Crator | Applied AI Company | Singapore">
@@ -587,22 +588,7 @@ import Nav from '../components/Nav.astro';
 		</div>
 	</section>
 
-	<!-- Footer -->
-	<footer class="footer">
-		<div class="footer-inner">
-			<a href="/" class="footer-logo">
-				<img src="https://www.cratorlabs.ai/_next/image?url=%2Ffull-logo.png&w=256&q=75" alt="Crator" height="22" />
-			</a>
-			<div class="footer-policies">
-				<a href="/privacy">Privacy</a>
-				<span class="footer-sep">·</span>
-				<a href="/terms-of-service">Terms</a>
-				<span class="footer-sep">·</span>
-				<a href="https://trust.cratorlabs.ai" target="_blank" rel="noopener">Security</a>
-			</div>
-			<p class="footer-copy">&copy; 2026 Crator Labs. Applied AI Company, Singapore.</p>
-		</div>
-	</footer>
+	<Footer />
 
 <script>
 const titles = { overview: 'Operations Overview', agents: 'AI Agents', analytics: 'Analytics', integrations: 'Integrations' };
