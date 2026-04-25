@@ -1,6 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
 ---
 
 <Layout title="Book a Demo | Crator Labs">
@@ -12,7 +13,6 @@ import Nav from '../components/Nav.astro';
 	<main class="blog-main">
 
 		<header class="blog-header">
-			<p class="blog-eyebrow">Book a Demo</p>
 			<h1>Let's talk AI.</h1>
 			<p class="blog-tagline">Schedule a call and we'll show you what's possible.</p>
 		</header>
@@ -38,21 +38,7 @@ import Nav from '../components/Nav.astro';
 
 	</main>
 
-	<footer class="blog-footer">
-		<div class="footer-inner">
-			<a href="/" class="footer-logo">
-				<img src="https://www.cratorlabs.ai/_next/image?url=%2Ffull-logo.png&w=256&q=75" alt="Crator" height="22" />
-			</a>
-			<div class="footer-policies">
-				<a href="/privacy">Privacy</a>
-				<span class="footer-sep">·</span>
-				<a href="/terms-of-service">Terms</a>
-				<span class="footer-sep">·</span>
-				<a href="https://trust.cratorlabs.ai" target="_blank" rel="noopener">Security</a>
-			</div>
-			<p class="footer-copy">&copy; 2026 Crator Labs. Applied AI Company, Singapore.</p>
-		</div>
-	</footer>
+	<Footer />
 
 </Layout>
 
@@ -90,14 +76,6 @@ import Nav from '../components/Nav.astro';
 		padding-bottom: 4rem;
 		border-bottom: 1px solid var(--border);
 		margin-bottom: 4rem;
-	}
-	.blog-eyebrow {
-		font-size: 0.6875rem;
-		font-weight: 700;
-		text-transform: uppercase;
-		letter-spacing: 0.1em;
-		color: var(--text-3);
-		margin-bottom: 1.25rem;
 	}
 	.blog-header h1 {
 		font-size: clamp(2.5rem, 5.5vw, 4rem);
@@ -165,35 +143,7 @@ import Nav from '../components/Nav.astro';
 		text-decoration: underline;
 	}
 
-	.blog-footer {
-		border-top: 1px solid var(--border);
-		padding: 2rem 2rem;
-	}
-	.footer-inner {
-		max-width: var(--max-w);
-		margin: 0 auto;
-		display: flex;
-		align-items: center;
-		justify-content: space-between;
-		flex-wrap: wrap;
-		gap: 1.5rem;
-	}
-	.footer-logo {
-		display: flex; align-items: center;
-	}
-	.footer-logo img { height: 22px; width: auto; }
-	.footer-policies { display: flex; align-items: center; gap: 0.5rem; }
-	.footer-policies a {
-		font-size: 0.8125rem; color: var(--text-2);
-		text-decoration: none; transition: color 0.15s;
-	}
-	.footer-policies a:hover { color: var(--text-1); }
-	.footer-sep { color: var(--text-3); font-size: 0.75rem; }
-	.footer-copy { font-size: 0.75rem; color: var(--text-3); }
-
 	@media (max-width: 600px) {
 		.blog-header h1 { font-size: 2rem; }
-		.footer-inner { flex-direction: column; align-items: flex-start; gap: 1rem; }
-		.footer-copy { margin-left: 0; }
 	}
 </style>
