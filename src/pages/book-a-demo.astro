@@ -18,18 +18,8 @@ import Footer from '../components/Footer.astro';
 		</header>
 
 		<section class="cal-embed">
-			<div class="cal-placeholder">
-				<div class="cal-icon">
-					<svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-						<rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
-						<line x1="16" y1="2" x2="16" y2="6"/>
-						<line x1="8" y1="2" x2="8" y2="6"/>
-						<line x1="3" y1="10" x2="21" y2="10"/>
-					</svg>
-				</div>
-				<p>Loading calendar...</p>
-			</div>
-		</section>
+		<iframe src="https://cal.com/yajat-gulati/ai-services?embed=true&embedType=Inline&layout=month_view&theme=light" title="Book a call" style="width:100%;height:100%;min-height:700px;border:none;"></iframe>
+	</section>
 
 		<section class="demo-fallback">
 			<p>Prefer to reach out directly?</p>
@@ -97,25 +87,16 @@ import Footer from '../components/Footer.astro';
 		border: 1px solid var(--border);
 		border-radius: 8px;
 		overflow: hidden;
-		min-height: 600px;
+		min-height: 700px;
+		margin-bottom: 3rem;
 	}
-
-	.cal-placeholder {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		justify-content: center;
-		min-height: 600px;
-		color: var(--text-3);
-	}
-
-	.cal-icon {
-		margin-bottom: 1rem;
-		opacity: 0.5;
-	}
-
-	.cal-placeholder p {
+	.layout-label {
+		background: #f7f7f7;
+		padding: 0.75rem 1rem;
 		font-size: 0.875rem;
+		font-weight: 500;
+		color: var(--text-2);
+		border-bottom: 1px solid var(--border);
 	}
 
 	.demo-fallback {

@@ -16,11 +16,20 @@ import Footer from '../components/Footer.astro';
 			<p class="tagline">Case studies, products, and experiments built for real businesses.</p>
 		</header>
 
-		<section class="case-studies">
-			<p class="section-label">Client Work</p>
-			<div class="cases-grid">
-				<a href="/portfolio/flow-coffee-sales-agent" class="case-card">
-					<div class="case-thumb"><img src="/images/sales-agent.webp" alt="Sales Agent" loading="lazy" /></div>
+		<!-- Filter tabs -->
+		<div class="filter-bar" id="filter-bar">
+			<button class="filter-tab active" data-filter="all">All <span class="filter-count" id="count-all"></span></button>
+			<button class="filter-tab" data-filter="client">Client Work</button>
+			<button class="filter-tab" data-filter="product">Products</button>
+			<button class="filter-tab" data-filter="ai-agent">AI Agent</button>
+			<button class="filter-tab" data-filter="software">Software</button>
+			<button class="filter-tab" data-filter="consumer">Consumer</button>
+		</div>
+
+		<section class="all-cases">
+			<div class="cases-grid" id="cases-grid">
+				<a href="/portfolio/flow-coffee-sales-agent" class="case-card" data-cat="client ai-agent">
+					<div class="case-thumb"><img src="/images/flow_sales_bot_1x.webp" alt="Sales Agent" loading="lazy" /></div>
 					<div class="case-body">
 						<div class="case-meta">
 							<span class="post-tag">AI Agent</span>
@@ -34,8 +43,8 @@ import Footer from '../components/Footer.astro';
 						<span class="case-arrow">→</span>
 					</div>
 				</a>
-				<a href="/portfolio/flow-coffee-operations-agent" class="case-card">
-					<div class="case-thumb"><img src="/images/operations-agent.webp" alt="Operations Agent" loading="lazy" /></div>
+				<a href="/portfolio/flow-coffee-operations-agent" class="case-card" data-cat="client ai-agent">
+					<div class="case-thumb"><img src="/images/flow_ops_bot_1x.webp" alt="Operations Agent" loading="lazy" /></div>
 					<div class="case-body">
 						<div class="case-meta">
 							<span class="post-tag">AI Agent</span>
@@ -49,8 +58,8 @@ import Footer from '../components/Footer.astro';
 						<span class="case-arrow">→</span>
 					</div>
 				</a>
-				<a href="/portfolio/flow-coffee-support-agent" class="case-card">
-					<div class="case-thumb"><img src="/images/support-agent.webp" alt="Support Agent" loading="lazy" /></div>
+				<a href="/portfolio/flow-coffee-support-agent" class="case-card" data-cat="client ai-agent">
+					<div class="case-thumb"><img src="/images/whatsapp_support_bot_flow_1x.webp" alt="Support Agent" loading="lazy" /></div>
 					<div class="case-body">
 						<div class="case-meta">
 							<span class="post-tag">AI Agent</span>
@@ -64,8 +73,8 @@ import Footer from '../components/Footer.astro';
 						<span class="case-arrow">→</span>
 					</div>
 				</a>
-				<a href="/portfolio/flow-coffee-web-app" class="case-card">
-					<div class="case-thumb"><img src="/images/ai-native-erp.webp" alt="AI-Native ERP" loading="lazy" /></div>
+				<a href="/portfolio/flow-coffee-web-app" class="case-card" data-cat="client software">
+					<div class="case-thumb"><img src="/images/flow_ops_dashboard_1x.webp" alt="AI-Native ERP" loading="lazy" /></div>
 					<div class="case-body">
 						<div class="case-meta">
 							<span class="post-tag">Software</span>
@@ -79,8 +88,8 @@ import Footer from '../components/Footer.astro';
 						<span class="case-arrow">→</span>
 					</div>
 				</a>
-				<a href="/portfolio/hoursense-legal-billing" class="case-card">
-					<div class="case-thumb"><img src="/images/hour-sense.webp" alt="HourSense" loading="lazy" /></div>
+				<a href="/portfolio/hoursense-legal-billing" class="case-card" data-cat="client software">
+					<div class="case-thumb"><img src="/images/hoursense_1x.webp" alt="HourSense" loading="lazy" /></div>
 					<div class="case-body">
 						<div class="case-meta">
 							<span class="post-tag">AI SaaS</span>
@@ -94,8 +103,8 @@ import Footer from '../components/Footer.astro';
 						<span class="case-arrow">→</span>
 					</div>
 				</a>
-				<a href="/portfolio/garment-supply-chain-erp" class="case-card">
-					<div class="case-thumb"></div>
+				<a href="/portfolio/garment-supply-chain-erp" class="case-card" data-cat="client software">
+					<div class="case-thumb"><img src="/images/erp_supply_chain_1x.webp" alt="Garment Supply Chain ERP" loading="lazy" /></div>
 					<div class="case-body">
 						<div class="case-meta">
 							<span class="post-tag">Software</span>
@@ -109,14 +118,68 @@ import Footer from '../components/Footer.astro';
 						<span class="case-arrow">→</span>
 					</div>
 				</a>
-			</div>
-		</section>
-
-		<section class="products">
-			<p class="section-label">Products</p>
-			<div class="cases-grid">
-				<a href="/portfolio/askwaai" class="case-card">
-					<div class="case-thumb"></div>
+				<a href="/portfolio/gst-e-invoicing" class="case-card" data-cat="client software">
+					<div class="case-thumb"><img src="/images/gst_e_invoicing__1x.webp" alt="GST E-Invoicing" loading="lazy" /></div>
+					<div class="case-body">
+						<div class="case-meta">
+							<span class="post-tag">Software</span>
+							<span class="post-date">Live</span>
+						</div>
+						<h3>GST E-Invoicing System</h3>
+						<p>One-click IRN + QR code generation for government-compliant invoices. Eliminated the need for a costly Zoho migration.</p>
+					</div>
+					<div class="case-footer">
+						<span class="case-client">LM Trading</span>
+						<span class="case-arrow">→</span>
+					</div>
+				</a>
+				<a href="/portfolio/operations-debit-tracker" class="case-card" data-cat="client software">
+					<div class="case-thumb"><img src="/images/ops_and_deibt_tracker_1x.webp" alt="Operations & Debit Tracker" loading="lazy" /></div>
+					<div class="case-body">
+						<div class="case-meta">
+							<span class="post-tag">Automation</span>
+							<span class="post-date">Live</span>
+						</div>
+						<h3>Operations &amp; Debit Tracker</h3>
+						<p>Automated morning reports and penalty tracking across all manufacturing units. Replaced a manual daily chase-up process.</p>
+					</div>
+					<div class="case-footer">
+						<span class="case-client">LM Trading</span>
+						<span class="case-arrow">→</span>
+					</div>
+				</a>
+				<a href="/portfolio/rice-machine-installment-tracker" class="case-card" data-cat="client software">
+					<div class="case-thumb"><img src="/images/installment_tracker_1x.webp" alt="Rice Machine Installment Tracker" loading="lazy" /></div>
+					<div class="case-body">
+						<div class="case-meta">
+							<span class="post-tag">Software</span>
+							<span class="post-date">Live</span>
+						</div>
+						<h3>Rice Machine Installment Tracker</h3>
+						<p>Installment tracking for high-value machines sold on 3–7 year payment plans across hundreds of clients.</p>
+					</div>
+					<div class="case-footer">
+						<span class="case-client">Kinetic Group</span>
+						<span class="case-arrow">→</span>
+					</div>
+				</a>
+				<a href="/portfolio/machine-access-control" class="case-card" data-cat="client software">
+					<div class="case-thumb"><img src="/images/facebook_post_5_1x.webp" alt="Machine Access Control" loading="lazy" /></div>
+					<div class="case-body">
+						<div class="case-meta">
+							<span class="post-tag">Automation</span>
+							<span class="post-date">Live</span>
+						</div>
+						<h3>Machine Access Control</h3>
+						<p>Payment-gated machine lock/unlock workflow. Non-paying clients automatically lose machine access.</p>
+					</div>
+					<div class="case-footer">
+						<span class="case-client">Kinetic Group</span>
+						<span class="case-arrow">→</span>
+					</div>
+				</a>
+				<a href="/portfolio/askwaai" class="case-card" data-cat="product software">
+					<div class="case-thumb"><img src="/images/ask_waai_1x.webp" alt="AskWaai" loading="lazy" /></div>
 					<div class="case-body">
 						<div class="case-meta">
 							<span class="post-tag">AI SaaS</span>
@@ -130,7 +193,7 @@ import Footer from '../components/Footer.astro';
 						<span class="case-arrow">→</span>
 					</div>
 				</a>
-				<a href="/portfolio/yar-ai-pendant" class="case-card">
+				<a href="/portfolio/yar-ai-pendant" class="case-card" data-cat="product">
 					<div class="case-thumb"></div>
 					<div class="case-body">
 						<div class="case-meta">
@@ -145,11 +208,74 @@ import Footer from '../components/Footer.astro';
 						<span class="case-arrow">→</span>
 					</div>
 				</a>
+				<a href="/portfolio/gptbookclub" class="case-card" data-cat="product consumer">
+					<div class="case-thumb"><img src="/images/gpt_book_club_1x.webp" alt="GPTBookClub" loading="lazy" /></div>
+					<div class="case-body">
+						<div class="case-meta">
+							<span class="post-tag">Consumer</span>
+							<span class="post-date">Live</span>
+						</div>
+						<h3>GPTBookClub</h3>
+						<p>Chat with your favourite books using GPT-4. 20,000+ visitors, no paid ads.</p>
+					</div>
+					<div class="case-footer">
+						<span class="case-client">Consumer</span>
+						<span class="case-arrow">→</span>
+					</div>
+				</a>
+				<a href="/portfolio/shabdify" class="case-card" data-cat="product consumer">
+					<div class="case-thumb"><img src="/images/shabdify_1x.webp" alt="Shabdify" loading="lazy" /></div>
+					<div class="case-body">
+						<div class="case-meta">
+							<span class="post-tag">Consumer</span>
+							<span class="post-date">Live</span>
+						</div>
+						<h3>Shabdify</h3>
+						<p>Indian NYT Connections-style word game. 5,000+ users, 200+ days of handwritten daily puzzles.</p>
+					</div>
+					<div class="case-footer">
+						<span class="case-client">Consumer</span>
+						<span class="case-arrow">→</span>
+					</div>
+				</a>
+				<a href="/portfolio/quickcheckout" class="case-card" data-cat="product consumer">
+					<div class="case-thumb"><img src="/images/quick_checkout_1x.webp" alt="QuickCheckout" loading="lazy" /></div>
+					<div class="case-body">
+						<div class="case-meta">
+							<span class="post-tag">Startup</span>
+							<span class="post-date">Prototype</span>
+						</div>
+						<h3>QuickCheckout</h3>
+						<p>Mobile-first grocery checkout — skip the cashier queue. Equity-free grant from NTU Innovator's Track.</p>
+					</div>
+					<div class="case-footer">
+						<span class="case-client">NTU Garage</span>
+						<span class="case-arrow">→</span>
+					</div>
+				</a>
 			</div>
 		</section>
 	</main>
 
 	<Footer />
+
+<script>
+	const tabs = document.querySelectorAll('.filter-tab');
+	const cards = document.querySelectorAll('.case-card');
+
+	tabs.forEach(tab => {
+		tab.addEventListener('click', () => {
+			tabs.forEach(t => t.classList.remove('active'));
+			tab.classList.add('active');
+			const filter = tab.dataset.filter;
+			cards.forEach(card => {
+				const cats = card.dataset.cat || '';
+				const show = filter === 'all' || cats.split(' ').includes(filter);
+				card.style.display = show ? '' : 'none';
+			});
+		});
+	});
+</script>
 
 </Layout>
 
@@ -213,6 +339,40 @@ import Footer from '../components/Footer.astro';
 	}
 
 	/* ─── Section label ──────────────────────────────────────── */
+	/* ─── Filter bar ─────────────────────────────────────────── */
+	.filter-bar {
+		display: flex;
+		align-items: center;
+		gap: 0.375rem;
+		margin-bottom: 2.5rem;
+		flex-wrap: wrap;
+	}
+	.filter-tab {
+		font-family: inherit;
+		font-size: 0.875rem;
+		font-weight: 500;
+		color: var(--text-2);
+		background: none;
+		border: 1px solid var(--border);
+		border-radius: 999px;
+		padding: 0.5625rem 1.125rem;
+		cursor: pointer;
+		transition: color 0.15s, background 0.15s, border-color 0.15s;
+		white-space: nowrap;
+	}
+	.filter-tab:hover {
+		color: var(--text-1);
+		border-color: var(--border-mid);
+		background: var(--surface);
+	}
+	.filter-tab.active {
+		background: #4A93D6;
+		border-color: #4A93D6;
+		color: #fff;
+	}
+	.all-cases { margin-bottom: 4rem; }
+
+	/* ─── Section label (legacy) ─────────────────────────────── */
 	.section-label {
 		font-size: 0.625rem;
 		font-weight: 700;
@@ -226,20 +386,18 @@ import Footer from '../components/Footer.astro';
 
 	/* ─── Tags & meta ────────────────────────────────────────── */
 	.post-tag {
-		font-size: 0.5625rem;
-		font-weight: 700;
+		font-size: 0.625rem;
+		font-weight: 600;
 		text-transform: uppercase;
-		letter-spacing: 0.07em;
+		letter-spacing: 0.06em;
 		color: var(--text-3);
-		background: rgba(0,0,0,0.04);
-		border: 1px solid var(--border);
-		padding: 0.1875rem 0.5rem;
-		border-radius: 3px;
 	}
 	.post-date {
-		font-size: 0.6875rem;
-		color: var(--text-3);
-		font-weight: 500;
+		font-size: 0.625rem;
+		font-weight: 600;
+		text-transform: uppercase;
+		letter-spacing: 0.04em;
+		color: #16a34a;
 	}
 
 /* ─── Grid ───────────────────────────────────────────────── */
@@ -296,7 +454,7 @@ import Footer from '../components/Footer.astro';
 	}
 	.case-card h3 {
 		font-size: 1rem;
-		font-weight: 400;
+		font-weight: 500;
 		color: var(--text-1);
 		letter-spacing: -0.015em;
 		line-height: 1.35;
