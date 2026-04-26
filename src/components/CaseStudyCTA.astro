@@ -1,0 +1,77 @@
+---
+---
+
+<section class="section section--dark" id="cta">
+  <div class="section-inner">
+    <p class="cta-eyebrow">Ready to make your business AI-native?</p>
+    <h2 class="cta-heading">Start with a <span class="gradient-text">30-minute</span> strategy call.</h2>
+    <p class="cta-sub">No pitch, no pressure.</p>
+    <a href="/book-a-demo" class="btn-primary-inv">Book a Call →</a>
+  </div>
+</section>
+
+<style>
+  .section--dark {
+    width: min(var(--max-w), 100vw);
+    margin: 0 auto;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #0d0d0d;
+    border-left: 1px solid var(--border);
+    border-right: 1px solid var(--border);
+  }
+
+  .section-inner {
+    text-align: center;
+    padding: 6rem 2rem;
+    max-width: 1120px;
+    margin: 0 auto;
+  }
+
+  .cta-eyebrow {
+    font-size: 0.6875rem;
+    font-weight: 600;
+    color: rgba(255,255,255,0.3);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 1.25rem;
+  }
+
+  .cta-heading {
+    font-size: clamp(1.75rem, 3vw, 2.5rem);
+    font-weight: 400;
+    letter-spacing: -0.025em;
+    margin-bottom: 0.75rem;
+    color: #fff;
+  }
+
+  .gradient-text {
+    background: linear-gradient(135deg, #60a5fa 0%, #a78bfa 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .cta-sub {
+    font-size: 1rem;
+    color: rgba(255,255,255,0.5);
+    margin-bottom: 2rem;
+  }
+
+  .btn-primary-inv {
+    display: inline-block;
+    font-size: 0.9375rem;
+    font-weight: 500;
+    color: #000;
+    background: #fff;
+    padding: 0.875rem 1.75rem;
+    border-radius: 8px;
+    transition: transform 0.15s, box-shadow 0.15s;
+  }
+
+  .btn-primary-inv:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  }
+</style>
