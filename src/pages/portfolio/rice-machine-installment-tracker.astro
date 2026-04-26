@@ -1,0 +1,283 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Nav from '../../components/Nav.astro';
+import Footer from '../../components/Footer.astro';
+---
+
+<Layout title="Rice Machine Installment Tracker | Crator">
+
+	<div class="page-rails" aria-hidden="true"></div>
+
+	<Nav active="work" />
+
+	<section class="case-hero">
+		<div class="back-link">
+			<a href="/portfolio">← Back to portfolio</a>
+		</div>
+		<div class="case-meta">
+			<span class="case-tag">Client Work</span>
+			<span class="case-status">live</span>
+		</div>
+		<h1>Rice Machine Installment Tracker</h1>
+		<p class="case-sub">100s clients tracked centrally, 7 yr payment plans managed, 2 wks from scoping to go-live.</p>
+
+		<div class="case-client">
+			<img src="https://www.cratorlabs.ai/_next/image?url=%2Flogos%2Fkinetic.png&w=128&q=75" alt="Kinetic Group" />
+			<span>Kinetic Group</span>
+		</div>
+	</section>
+
+	<section class="case-content">
+		<div class="case-section">
+			<h2>The Problem</h2>
+			<p>Kinetic Group is an Indian manufacturer and distributor of rice processing machinery. They sell high-value machines on 3 to 7 year installment plans to hundreds of clients across the country. Payment tracking was fragmented across spreadsheets and manual records. With hundreds of clients on multi-year plans, overdue payments were missed and there was no single view of outstanding balances.</p>
+		</div>
+
+		<div class="case-section">
+			<h2>What We Built</h2>
+			<p>We built a centralised installment tracking system with client-wise payment history, outstanding balance views, automated reminders for overdue payments, and a mobile-friendly dashboard for field teams.</p>
+		</div>
+
+		<div class="case-section">
+			<h2>Features</h2>
+			<ul>
+				<li>Centralised tracking for 3–7 year installment plans</li>
+				<li>Client-wise payment history and outstanding balance views</li>
+				<li>Automated payment reminders and overdue alerts</li>
+				<li>Mobile-friendly dashboard for field teams</li>
+			</ul>
+		</div>
+
+		<div class="case-section">
+			<h2>Tech Stack</h2>
+			<div class="tech-tags">
+				<span>Next.js</span>
+				<span>PostgreSQL</span>
+				<span>Tailwind CSS</span>
+			</div>
+		</div>
+	</section>
+
+	<section class="section section--dark" id="cta">
+		<div class="section-inner">
+			<p class="cta-eyebrow">Ready to make your business AI-native?</p>
+			<h2 class="cta-heading">Start with a <span class="gradient-text">30-minute</span> strategy call.</h2>
+			<p class="cta-sub">No pitch, no pressure.</p>
+			<a href="/book-a-demo" class="btn-primary-inv">Book a Call →</a>
+		</div>
+	</section>
+
+	<Footer />
+
+</Layout>
+
+<style is:global>
+	:root {
+		--bg: #fff;
+		--surface: #f7f7f7;
+		--border: rgba(0,0,0,0.08);
+		--border-mid: rgba(0,0,0,0.14);
+		--text-1: #000;
+		--text-2: rgba(0,0,0,0.5);
+		--text-3: rgba(0,0,0,0.3);
+		--max-w: 1120px;
+	}
+	html {
+		background: var(--bg);
+		color: var(--text-1);
+		font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+	}
+	body { margin: 0; padding: 0; }
+	a { color: inherit; text-decoration: none; }
+	.page-rails {
+		position: fixed;
+		top: 0; bottom: 0;
+		left: 50%; transform: translateX(-50%);
+		width: min(var(--max-w), 100vw);
+		pointer-events: none;
+		z-index: 40;
+		border-left: 1px solid var(--border);
+		border-right: 1px solid var(--border);
+	}
+
+	.case-hero {
+		max-width: var(--max-w);
+		margin: 0 auto;
+		padding: 8rem 2rem 4rem;
+	}
+	.back-link {
+		margin-bottom: 2rem;
+	}
+	.back-link a {
+		font-size: 0.875rem;
+		color: var(--text-2);
+		transition: color 0.15s;
+	}
+	.back-link a:hover { color: var(--text-1); }
+	.case-meta {
+		display: flex;
+		align-items: center;
+		gap: 0.75rem;
+		margin-bottom: 1rem;
+	}
+	.case-tag {
+		font-size: 0.6875rem;
+		font-weight: 700;
+		text-transform: uppercase;
+		letter-spacing: 0.08em;
+		color: var(--text-3);
+		background: var(--surface);
+		padding: 0.25rem 0.625rem;
+		border-radius: 4px;
+	}
+	.case-status {
+		font-size: 0.6875rem;
+		font-weight: 600;
+		text-transform: uppercase;
+		letter-spacing: 0.04em;
+		color: #16a34a;
+	}
+	.case-hero h1 {
+		font-size: clamp(2rem, 4vw, 3rem);
+		font-weight: 400;
+		letter-spacing: -0.03em;
+		line-height: 1.15;
+		margin: 0 0 1rem;
+	}
+	.case-sub {
+		font-size: 1.125rem;
+		color: var(--text-2);
+		line-height: 1.6;
+		max-width: 600px;
+		margin-bottom: 2rem;
+	}
+	.case-client {
+		display: flex;
+		align-items: center;
+		gap: 0.75rem;
+	}
+	.case-client img {
+		width: 40px;
+		height: 40px;
+		border-radius: 8px;
+		object-fit: cover;
+	}
+	.case-client span {
+		font-size: 0.9375rem;
+		font-weight: 500;
+	}
+
+	.case-content {
+		max-width: var(--max-w);
+		margin: 0 auto;
+		padding: 0 2rem 6rem;
+	}
+	.case-section {
+		margin-bottom: 3rem;
+	}
+	.case-section h2 {
+		font-size: 1.25rem;
+		font-weight: 600;
+		margin-bottom: 1rem;
+	}
+	.case-section p {
+		font-size: 1rem;
+		color: var(--text-2);
+		line-height: 1.7;
+		max-width: 720px;
+	}
+	.case-section ul {
+		list-style: none;
+		padding: 0;
+		margin: 0;
+	}
+	.case-section li {
+		font-size: 0.9375rem;
+		color: var(--text-2);
+		padding: 0.5rem 0;
+		padding-left: 1.5rem;
+		position: relative;
+	}
+	.case-section li::before {
+		content: '';
+		position: absolute;
+		left: 0;
+		top: 0.95rem;
+		width: 6px;
+		height: 6px;
+		background: var(--text-3);
+		border-radius: 50%;
+	}
+	.tech-tags {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.5rem;
+	}
+	.tech-tags span {
+		font-size: 0.75rem;
+		font-weight: 500;
+		color: var(--text-2);
+		background: var(--surface);
+		padding: 0.375rem 0.75rem;
+		border-radius: 4px;
+		border: 1px solid var(--border);
+	}
+
+	.section {
+		padding: 5rem 2rem;
+		text-align: center;
+	}
+	.section--dark {
+		background: #000;
+		color: #fff;
+	}
+	.section-inner {
+		max-width: 600px;
+		margin: 0 auto;
+	}
+	.cta-eyebrow {
+		font-size: 0.75rem;
+		font-weight: 600;
+		text-transform: uppercase;
+		letter-spacing: 0.1em;
+		opacity: 0.6;
+		margin-bottom: 1rem;
+	}
+	.cta-heading {
+		font-size: clamp(1.75rem, 3vw, 2.5rem);
+		font-weight: 400;
+		letter-spacing: -0.025em;
+		margin-bottom: 0.75rem;
+	}
+	.gradient-text {
+		background: linear-gradient(135deg, #60a5fa 0%, #a78bfa 100%);
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+		background-clip: text;
+	}
+	.cta-sub {
+		font-size: 1rem;
+		opacity: 0.6;
+		margin-bottom: 2rem;
+	}
+	.btn-primary-inv {
+		display: inline-block;
+		font-size: 0.9375rem;
+		font-weight: 500;
+		color: #000;
+		background: #fff;
+		padding: 0.875rem 1.75rem;
+		border-radius: 8px;
+		transition: transform 0.15s, box-shadow 0.15s;
+	}
+	.btn-primary-inv:hover {
+		transform: translateY(-1px);
+		box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+	}
+
+	@media (max-width: 640px) {
+		.case-hero { padding: 7rem 1.5rem 3rem; }
+		.case-content { padding: 0 1.5rem 4rem; }
+		.case-hero h1 { font-size: 1.75rem; }
+	}
+</style>
