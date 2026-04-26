@@ -252,7 +252,11 @@ import Footer from '../../components/Footer.astro';
 		width: min(var(--max-w), 100vw);
 		margin: 0 auto;
 		position: relative;
+		left: 50%;
+		transform: translateX(-50%);
 		background: #0d0d0d;
+		border-left: 1px solid var(--border);
+		border-right: 1px solid var(--border);
 	}
 
 	.section--dark .section-inner {

@@ -233,9 +233,15 @@ import Footer from '../../components/Footer.astro';
 		padding: 5rem 2rem;
 		text-align: center;
 	}
-	.section--dark {
-		background: #000;
-		color: #fff;
+.section--dark {
+		width: min(var(--max-w), 100vw);
+		margin: 0 auto;
+		position: relative;
+		left: 50%;
+		transform: translateX(-50%);
+		background: #0d0d0d;
+		border-left: 1px solid var(--border);
+		border-right: 1px solid var(--border);
 	}
 	.section-inner {
 		max-width: 600px;
