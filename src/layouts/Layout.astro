@@ -2,9 +2,10 @@
 interface Props {
 	title: string;
 	description?: string;
+	useGeist?: boolean;
 }
 
-const { title, description = "Crator AI - AI agents that get smarter every week" } = Astro.props;
+const { title, description = "Crator AI - AI agents that get smarter every week", useGeist = true } = Astro.props;
 ---
 
 <!doctype html>
@@ -18,11 +19,11 @@ const { title, description = "Crator AI - AI agents that get smarter every week"
 		<title>{title}</title>
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-		<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600;700&family=Inter:ital,opsz,wght@0,14..32,300;0,14..32,400;0,14..32,500;0,14..32,600;0,14..32,700;1,14..32,400&family=Geist:wght@300;400;500;600;700&family=Funnel+Sans:ital,opsz,wght@0,14..32,300;0,14..32,400;0,14..32,500;0,14..32,600;0,14..32,700;1,14..32,400&family=Funnel+Display:ital,opsz,wght@0,14..32,300;0,14..32,400;0,14..32,500;0,14..32,600;0,14..32,700;1,14..32,400&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 		<link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css" />
 		<link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/duotone/style.css" />
 	</head>
-	<body>
+	<body class={useGeist ? 'font-geist' : ''}>
 		<slot />
 	</body>
 </html>
@@ -39,7 +40,6 @@ const { title, description = "Crator AI - AI agents that get smarter every week"
 	}
 
 	body {
-		font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 		background-color: #fff;
 		color: #000;
 		line-height: 1.6;
@@ -48,8 +48,16 @@ const { title, description = "Crator AI - AI agents that get smarter every week"
 		overflow-x: hidden;
 	}
 
+	body.font-geist {
+		font-family: 'Geist', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+	}
+
+	body.font-geist h1, body.font-geist h2, body.font-geist h3, body.font-geist h4, body.font-geist h5, body.font-geist h6 {
+		font-family: 'Geist', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+		font-weight: 300;
+	}
+
 	h1, h2, h3, h4, h5, h6 {
-		font-family: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 		font-weight: 300;
 	}
 
