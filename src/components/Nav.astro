@@ -1,6 +1,6 @@
 ---
 interface Props {
-  active?: 'home' | 'work' | 'blog' | 'security';
+  active?: 'home' | 'work' | 'blog' | 'security' | 'typography-test';
 }
 const { active } = Astro.props;
 ---
@@ -14,6 +14,7 @@ const { active } = Astro.props;
     <a href="/">Product</a>
     <a href="/portfolio">Work</a>
     <a href="/blog">Blog</a>
+    <a href="/typography-test">Typography</a>
     <a href="https://trust.cratorlabs.ai" target="_blank" rel="noopener">Security</a>
     <a href="/book-a-demo" class="mobile-menu-cta">Book a Meeting</a>
   </div>
@@ -25,10 +26,11 @@ const { active } = Astro.props;
       <img src="https://www.cratorlabs.ai/_next/image?url=%2Ffull-logo.png&w=256&q=75" alt="Crator" height="22" />
     </a>
     <div class="nav-links">
-      <a href="/"                           class={active === 'home'     ? 'active' : ''}>Product</a>
-      <a href="/portfolio"                  class={active === 'work'     ? 'active' : ''}>Work</a>
-      <a href="/blog"                       class={active === 'blog'     ? 'active' : ''}>Blog</a>
-      <a href="https://trust.cratorlabs.ai" class={active === 'security' ? 'active' : ''} target="_blank" rel="noopener">Security</a>
+      <a href="/"                           class={active === 'home'             ? 'active' : ''}>Product</a>
+      <a href="/portfolio"                  class={active === 'work'             ? 'active' : ''}>Work</a>
+      <a href="/blog"                       class={active === 'blog'             ? 'active' : ''}>Blog</a>
+      <a href="/typography-test"             class={active === 'typography-test' ? 'active' : ''}>Typography</a>
+      <a href="https://trust.cratorlabs.ai" class={active === 'security'         ? 'active' : ''} target="_blank" rel="noopener">Security</a>
     </div>
     <a href="/book-a-demo" class="nav-cta">Book a Meeting</a>
 
